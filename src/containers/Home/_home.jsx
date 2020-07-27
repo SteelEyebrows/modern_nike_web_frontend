@@ -1,40 +1,32 @@
 import * as React from 'react';
-import {Dispatch,connect} from 'react-redux';
-import { rootReducer } from "../../store/reducers";
-import { departmentAction } from "../../store/actions";
-// import {departments, categories} from 'store/module';
+import {useSelector,useDispatch} from 'react-redux';
+import { departmentAction,adaptiveAction } from "../../store/actions";
 import {Home} from '../../components';
+import { useNetworkStatus } from 'react-adaptive-hooks/network';
 
-class HomeContainer extends React.Component{
+const HomeContainer = (props) =>{
+    const data = useSelector(mapStateToProps, []);
+    const dispatch = useDispatch();
+    const { effectiveConnectionType } = useNetworkStatus();
 
-    onclickEvent=()=>{
-        this.props.getDepartments("v0");
-    }
+    const getDepartments =(id)=>dispatch(departmentAction.departmentRequest(id));
+    const setAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
 
-    render(){
-        const {departments} = this.props;
-        return(
-            <>
-                <Home departments={departments}/>
-                <button onClick={this.onclickEvent}>
-                    Activate Lasers
-                </button>
-            </>
-        )
-    }
-}
+    const onclickEvent=()=>setAdaptive(effectiveConnectionType);
+   
+    return(
+        <>
+            <Home departments={data.departments}/>
+            <button onClick={onclickEvent}>
+                {effectiveConnectionType}
+            </button>
+        </>
+    );
+  }
 
 const mapStateToProps = (rootReducer)=>({//reducers => case
+    adaptiveAction:rootReducer.adaptive.adaptive,
     departments:rootReducer.departments.departments
 });
 
-const mapDispatchToProps = (dispatch)=>({//action => 정의된 함수에 인자 대입해서 리턴
-    getDepartments:(id)=>dispatch(departmentAction.departmentRequest(id)),
-});
-
-const connectModule = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(HomeContainer);
-
-export default connectModule;
+export default HomeContainer;

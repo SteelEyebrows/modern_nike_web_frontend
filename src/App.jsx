@@ -13,8 +13,7 @@ function App() {
         meta={[{
           name:'des',
           content:'content'
-        }
-        ]}
+        }]}
         title="shop"/>
         <Switch>
           {

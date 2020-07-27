@@ -2,6 +2,7 @@ import React,  { StatelessComponent } from 'react';
 import styled, { keyframes } from 'styled-components';
 // https://wanderlust-webdesign.com/css-border-radius-can-do-that/
 // https://www.dailytoolz.com/fancy-border-radius-generator/full-control-8-points.php#38.47.42.41-29.65.60.75-.
+
 const type1 = keyframes`
 0% { 
   border-radius: 52% 48% 63% 37% / 30% 41% 59% 70%
@@ -112,10 +113,8 @@ const Inner =styled.div`
 `;
 
 export default function Slime(props){
-  let type = undefined;
   let { image,top,right,left,bottom,size,typenumber,title,disc,before,after} = props;
  
-
   return(
     <Morphradius image={image} top={top} right={right} size={size} left={left} bottom={bottom} typenumber={Whattype(typenumber)}>
           <Img before={before} after={after}>
