@@ -10,7 +10,6 @@ import { call, put, takeEvery } from "redux-saga/effects";
 export function* fetchDepartment({ payload }) {
   try {
     const { data } = yield call(api.getDepartments, payload);
-    console.log(data);
     yield put(departmentAction.departmentSuccess(data));
 }
   catch(error) {

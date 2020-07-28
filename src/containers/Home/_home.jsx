@@ -12,20 +12,25 @@ const HomeContainer = (props) =>{
     const getDepartments =(id)=>dispatch(departmentAction.departmentRequest(id));
     const setAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
 
-    const onclickEvent=()=>setAdaptive(effectiveConnectionType);
-   
+    React.useEffect(() => {
+        setAdaptive(effectiveConnectionType);
+    },[]);
+    
+
     return(
         <>
-            <Home departments={data.departments}/>
-            <button onClick={onclickEvent}>
-                {effectiveConnectionType}
-            </button>
+        {
+            data.isFatching?
+            <div>loading</div>:
+            <Home departments={data.departments} images={data.images}/>
+        } 
         </>
     );
   }
 
 const mapStateToProps = (rootReducer)=>({//reducers => case
-    adaptiveAction:rootReducer.adaptive.adaptive,
+    isFatching:rootReducer.adaptive.isFatching,
+    images:rootReducer.adaptive.images,
     departments:rootReducer.departments.departments
 });
 

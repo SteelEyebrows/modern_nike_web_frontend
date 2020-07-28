@@ -10,12 +10,11 @@ import { call, put, takeEvery } from "redux-saga/effects";
 
 export function* fetchAdaptive({ payload }) {
   try {
-      console.log(payload);
-    // const { data } = yield call(api.setAdatptive);
-    // yield put(adaptiveAction.adaptiveSuccess(data));
+    const { data } = yield call(api.setAdatptive,"adaptive.json");
+    yield put(adaptiveAction.adaptiveSuccess(data.images[payload]));
 }
   catch(error) {
-    // yield put(adaptiveAction.adaptiveFailure(error));
+    yield put(adaptiveAction.adaptiveFailure(error));
   }
 }
 

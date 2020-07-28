@@ -7,21 +7,24 @@ import {
   import _ from "underscore";
 
   const initialState= {
-    adaptive:""
+    isFatching:true,
+    images:{}
   };
   
   export default function (state = initialState, action){
     switch (action.type) {
       case SET_ADAPTIVE[REQUEST]:
-        
         return {
           ...state,
+          isFatching:true
         };
       case SET_ADAPTIVE[SUCCESS]:
         const {payload} =action;
+        console.log(payload);
         return {
           ...state,
-          adaptive:payload
+          images:payload,
+          isFatching:false
         };
       case SET_ADAPTIVE[FAILURE]:
         return {
