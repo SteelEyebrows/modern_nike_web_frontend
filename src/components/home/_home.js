@@ -1,7 +1,8 @@
 import * as React from "react";
-import Slime from './_slime';
+import Slime from './slime/_slime';
 import Navigation from '../navigation';
-import {SectionSet,SectionOne,SectionTwo,NextButton} from './_style';
+import {SectionSet,SectionOne,SectionTwo,NextButton,SlideInner,Image,Inner} from './_style';
+import Slider from './slider';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
 
 const Home = ({ departments,images }) => {
@@ -21,10 +22,10 @@ const Home = ({ departments,images }) => {
     <SectionSet className="set">			 
           <SectionOne>
             <div>
-              <Slime image={images[0]&&images[0].url} right={-5} top={-5} size={40} typenumber={1}  title={"Animating"} disc={"Animating"}/>
-              <Slime image={images[1]&&images[1].url} left={-1} top={20} size={20} typenumber={2} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(15, 96, 158, 0)"} title={"Animating"} disc={"Animating"}/>
-              <Slime image={images[1]&&images[1].url} right={40} bottom={20} size={10} typenumber={4} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(218, 146, 37, 0)"} title={"Animating"} disc={"Animating"}/>
-              <Slime image={images[1]&&images[1].url} left={20} bottom={2} size={25} typenumber={3} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(218, 146, 37, 0)"} title={"Animating"} disc={"Animating"}/>
+              <Slime image={images[0]&&images[0].url} position="absolute" right={-5} top={-5} size={40} typenumber={1}  title={"Animating"} disc={"Animating"} hover={true}/>
+              <Slime image={images[1]&&images[1].url} position="absolute" left={-1} top={20} size={20} typenumber={2} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(15, 96, 158, 0)"} title={"Animating"} disc={"Animating"} hover={true}/>
+              <Slime image={images[1]&&images[1].url} position="absolute" right={40} bottom={20} size={10} typenumber={4} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(218, 146, 37, 0)"} title={"Animating"} disc={"Animating"} hover={true}/>
+              <Slime image={images[1]&&images[1].url} position="absolute" left={20} bottom={2} size={25} typenumber={3} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(218, 146, 37, 0)"} title={"Animating"} disc={"Animating"} hover={true}/>
             </div>
               <NextButton> 
                 <a href="#">
@@ -38,9 +39,61 @@ const Home = ({ departments,images }) => {
           </SectionOne>
 
 					<SectionTwo>
-              <div>
-                  dd
-              </div> 
+            <Slider height="300px" auto speed={3000}>
+                <SlideInner>
+                  <Inner>
+                    <div>
+                      OFF WHITE
+                    </div>
+                    <div>
+                      ffffffffffff
+                    </div>
+                  </Inner>
+                  <Inner>
+                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
+                    <Image src="https://i.pinimg.com/originals/fc/c7/10/fcc71020a8c438b5dd33cf6a884586d2.png"/>
+                  </Inner>
+                </SlideInner>
+                <SlideInner>
+                  <Inner>
+                    ffffffffffff
+                  </Inner>
+                  <Inner>
+                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
+                    <Image src="https://cdn.shopify.com/s/files/1/2358/2817/products/Wethenew-Sneakers-France-Air-Force-1-Off-White-Volt-1_2000x.png?v=1545054586"/>
+                  </Inner>
+                </SlideInner>
+                <SlideInner>
+                  <Inner>
+                    ffffffffffff
+                  </Inner>
+                  <Inner>
+                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
+                    <Image src="https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/j/aj4585_101_8e_1.png"/>
+                  </Inner>
+                </SlideInner>
+                <SlideInner>
+                  <Inner>
+                    ffffffffffff
+                  </Inner>
+                  <Inner>
+                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
+                    <Image src="https://images.restocks.eu/products/CT0856-600/nike-dunk-low-off-white-university-red-2-1000.png"/>
+                  </Inner>
+                </SlideInner>
+                <SlideInner>
+                  <Inner>
+                    ffffffffffff
+                  </Inner>
+                  <Inner>
+                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
+                    <Image src="https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/a/aa3832_700_1.png"/>
+                  </Inner>
+                </SlideInner>
+                <SlideInner>
+                  6
+                </SlideInner>
+            </Slider>
 					</SectionTwo>
 			</SectionSet>
 		</>

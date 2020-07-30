@@ -73,27 +73,27 @@ const type4 = keyframes`
 `
 
 const Morphradius =styled.div`
-  position: absolute;
+  position: ${props=>props.position};
   top:${props=>props.top}vh;
   left:${props=>props.left}vw;
   right:${props=>props.right}vw;
   bottom:${props=>props.bottom}vh;
   display: flex;
   overflow: hidden;
-  background-image: url(${props=>props.image});
+  background: ${props=>props.image?`url(${props.image})`:props.background};
   background-size: cover;
   width:  ${props=>props.size}vw;
   height:  ${props=>props.size}vw;
   animation: ${props=>props.typenumber} 10s infinite;
   z-index:0;
   transition: all ease 1s;
+  ${props=>props.hover&&` 
   &:hover {
     transform: scale(1.02);
-
-  }
+  }`}
 `;
 const Img =styled.div`
-    position: absolute; 
+    position: ${props=>props.position}; 
     top:0;
     bottom:0;
     width: 100%;
@@ -113,10 +113,10 @@ const Inner =styled.div`
 `;
 
 export default function Slime(props){
-  let { image,top,right,left,bottom,size,typenumber,title,disc,before,after} = props;
+  let { hover,position,image,background,top,right,left,bottom,size,typenumber,title,disc,before,after} = props;
  
   return(
-    <Morphradius image={image} top={top} right={right} size={size} left={left} bottom={bottom} typenumber={Whattype(typenumber)}>
+    <Morphradius hover={hover} image={image} background={background} position={position} top={top} right={right} size={size} left={left} bottom={bottom} typenumber={Whattype(typenumber)}>
           <Img before={before} after={after}>
              <Inner>
                 <div>

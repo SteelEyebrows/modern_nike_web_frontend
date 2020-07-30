@@ -1,0 +1,9 @@
+type allData @model {
+	id: ID
+	type: String!
+	name: String!
+	grade: String
+	percentage: Int
+	todo: String
+	words: String
+}

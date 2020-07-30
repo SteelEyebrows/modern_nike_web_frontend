@@ -1,0 +1,7 @@
+{
+    "aws": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "ap-northeast-2-user"
+    }
+}

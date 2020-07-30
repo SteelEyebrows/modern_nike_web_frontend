@@ -1,0 +1,128 @@
+type allData {
+  id: ID
+  type: String!
+  name: String!
+  grade: String
+  percentage: Int
+  todo: String
+  words: String
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelallDataConnection {
+  items: [allData]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelallDataFilterInput {
+  id: ModelIDFilterInput
+  type: ModelStringFilterInput
+  name: ModelStringFilterInput
+  grade: ModelStringFilterInput
+  percentage: ModelIntFilterInput
+  todo: ModelStringFilterInput
+  words: ModelStringFilterInput
+  and: [ModelallDataFilterInput]
+  or: [ModelallDataFilterInput]
+  not: ModelallDataFilterInput
+}
+
+type Query {
+  getAllData(id: ID!): allData
+  listAllDatas(filter: ModelallDataFilterInput, limit: Int, nextToken: String): ModelallDataConnection
+}
+
+input CreateAllDataInput {
+  id: ID
+  type: String!
+  name: String!
+  grade: String
+  percentage: Int
+  todo: String
+  words: String
+}
+
+input UpdateAllDataInput {
+  id: ID!
+  type: String
+  name: String
+  grade: String
+  percentage: Int
+  todo: String
+  words: String
+}
+
+input DeleteAllDataInput {
+  id: ID
+}
+
+type Mutation {
+  createAllData(input: CreateAllDataInput!): allData
+  updateAllData(input: UpdateAllDataInput!): allData
+  deleteAllData(input: DeleteAllDataInput!): allData
+}
+
+type Subscription {
+  onCreateAllData: allData @aws_subscribe(mutations: ["createAllData"])
+  onUpdateAllData: allData @aws_subscribe(mutations: ["updateAllData"])
+  onDeleteAllData: allData @aws_subscribe(mutations: ["deleteAllData"])
+}

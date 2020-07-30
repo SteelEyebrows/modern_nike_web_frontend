@@ -4,13 +4,14 @@ import { departmentAction,adaptiveAction } from "../../store/actions";
 import {Home} from '../../components';
 import { useNetworkStatus } from 'react-adaptive-hooks/network';
 
+
 const HomeContainer = (props) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
     const { effectiveConnectionType } = useNetworkStatus();
 
-    const getDepartments =(id)=>dispatch(departmentAction.departmentRequest(id));
     const setAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
+    
 
     React.useEffect(() => {
         setAdaptive(effectiveConnectionType);
@@ -21,7 +22,9 @@ const HomeContainer = (props) =>{
         <>
         {
             data.isFatching?
-            <div>loading</div>:
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+                loading
+            </div>:
             <Home departments={data.departments} images={data.images}/>
         } 
         </>

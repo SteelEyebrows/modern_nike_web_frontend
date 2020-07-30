@@ -1,0 +1,71 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awscognitotutorialst-aws-133746-authRole",
+            "UnauthRoleArn": "arn:aws:iam::423379895697:role/amplify-awscognitotutorialst-aws-133746-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::423379895697:role/amplify-awscognitotutorialst-aws-133746-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "amplify-awscognitotutorialst-aws-133746-deployment",
+            "UnauthRoleName": "amplify-awscognitotutorialst-aws-133746-unauthRole",
+            "StackName": "amplify-awscognitotutorialst-aws-133746",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:423379895697:stack/amplify-awscognitotutorialst-aws-133746/1cad5b70-342c-11ea-8ed3-0aabc16c792a"
+        }
+    },
+    "api": {
+        "wowproj": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [],
+                    "defaultAuthentication": {
+                        "authenticationType": "API_KEY",
+                        "apiKeyConfig": {
+                            "description": "wow",
+                            "apiKeyExpirationDays": "365"
+                        }
+                    }
+                }
+            },
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-awscognitotutorialst-aws-133746-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+                "logicalId": "apiwowproj"
+            },
+            "lastPushTimeStamp": "2020-03-10T06:02:42.293Z"
+        }
+    },
+    "auth": {
+        "awscognitotutorialst7204e1ab": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [],
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-awscognitotutorialst-aws-133746-deployment/amplify-cfn-templates/auth/awscognitotutorialst7204e1ab-cloudformation-template.yml",
+                "logicalId": "authawscognitotutorialst7204e1ab"
+            },
+            "lastPushTimeStamp": "2020-03-10T06:02:42.301Z"
+        }
+    },
+    "storage": {
+        "plzz": {
+            "service": "S3",
+            "providerPlugin": "awscloudformation",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-awscognitotutorialst-aws-133746-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+                "logicalId": "storageplzz"
+            },
+            "lastPushTimeStamp": "2020-03-10T06:02:42.297Z"
+        }
+    },
+    "hosting": {
+        "S3AndCloudFront": {
+            "service": "S3AndCloudFront",
+            "providerPlugin": "awscloudformation",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/amplify-awscognitotutorialst-aws-133746-deployment/amplify-cfn-templates/hosting/template.json",
+                "logicalId": "hostingS3AndCloudFront"
+            },
+            "lastPushTimeStamp": "2020-03-10T06:02:42.288Z"
+        }
+    }
+}

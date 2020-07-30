@@ -12,17 +12,20 @@ export const Menu =styled.ul`
     height: 60px;
     position: relative;
     z-index:9;
-    li{
+    
+`;
+export const MenuComp =styled.li`
+
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100vw;
         height: 60px;
+        z-index:10;
         a{
-            color:#fff;
+            color:${props=>props.className=="active"?"red":""};
             text-decoration: none;
         }
-    }
 `;
 
 export const SubMenu =styled.div`
@@ -35,7 +38,7 @@ export const SubMenu =styled.div`
     background-color: #fff;
     opacity: 0;
     top: -25vh;
-    z-index:8;
+    z-index:7;
     color:black;
     ul{
         width: 100vw;
@@ -43,7 +46,6 @@ export const SubMenu =styled.div`
         border-left: 1px solid #ddd;
         li{
             a{
-                text-decoration: none;
                 color:black;
                 &:hover{
                     color: springgreen;

@@ -1,1 +1,1 @@
-export {default} from './department';
+export {default} from './_department';

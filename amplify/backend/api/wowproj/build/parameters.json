@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "wowproj",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "S3DeploymentBucket": "amplify-awscognitotutorialst-aws-133746-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/fc8ff3a2ac9f3e25583766dbb7faca39310fe4fd"
+}

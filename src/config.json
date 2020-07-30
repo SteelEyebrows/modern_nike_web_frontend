@@ -1,0 +1,18 @@
+{
+    "api": { 
+      "invokeUrl": "https://5bltcq602h.execute-api.us-west-2.amazonaws.com/prod"
+    } ,
+    "cognito":{
+      "REGION":"ap-northeast-2",
+      "USER_POOL_ID":"ap-northeast-2_O6h5CbYvt",
+      "APP_CLIENT_ID":"qolqi2gi7svqi7p7dchsltq10"
+    },
+    "S3":{
+      "bucketName": "wowproject-wow",
+      "dirName":"demo",
+      "region": "ap-northeast-2",
+      "accessKeyId": "AKIAIRRU47F5VG7TAUYA",
+      "secretAccessKey": "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"
+    }
+  }
+  

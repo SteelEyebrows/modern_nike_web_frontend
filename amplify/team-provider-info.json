@@ -1,0 +1,19 @@
+{
+    "aws": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awscognitotutorialst-aws-133746-authRole",
+            "UnauthRoleArn": "arn:aws:iam::423379895697:role/amplify-awscognitotutorialst-aws-133746-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::423379895697:role/amplify-awscognitotutorialst-aws-133746-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "amplify-awscognitotutorialst-aws-133746-deployment",
+            "UnauthRoleName": "amplify-awscognitotutorialst-aws-133746-unauthRole",
+            "StackName": "amplify-awscognitotutorialst-aws-133746",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:423379895697:stack/amplify-awscognitotutorialst-aws-133746/1cad5b70-342c-11ea-8ed3-0aabc16c792a"
+        },
+        "categories": {
+            "auth": {
+                "awscognitotutorialst7204e1ab": {}
+            }
+        }
+    }
+}

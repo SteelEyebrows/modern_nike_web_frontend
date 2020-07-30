@@ -1,0 +1,5 @@
+type ToNote @model {
+  id: ID!
+  name: String!
+  description: String
+}

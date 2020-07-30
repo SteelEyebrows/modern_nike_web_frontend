@@ -1,1 +1,1 @@
-export {default} from './adaptive';
+export {default} from './_adaptive';
