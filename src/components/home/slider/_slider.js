@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { useInterval } from "./_auto";
-import {Container} from './_style';
+import {Container,SlideInner,Inner,Image} from './_style';
+import Slime from '../slime';
 
-const Slider = ({ height, children, auto, speed }) => {
+const Slider = ({ height, datalist, auto, speed }) => {
   const ref = useRef();
   const [position, setPosition] = useState(1);
-  const [length] = useState(children.length + 1);
+  const [length] = useState(datalist.length + 1);
   const [percent] = useState(100 / length);
   const [isMouseOver, setIsMouseOver] = useState(false);
   const SPEED = speed || 3000;
@@ -74,11 +75,32 @@ const Slider = ({ height, children, auto, speed }) => {
         {">"}
       </div>
       <div className="contents" ref={ref}>
-        {children[children.length - 1]}
-        {children}
+      <SlideInner/>
+        {
+          datalist.map((data,i)=><Mapping data={data}/>)
+        }
       </div>
     </Container>
   );
 };
+
+const Mapping = ({data})=>{
+  return(
+          <SlideInner>
+                  <Inner>
+                    <div>
+                      {data.title}
+                    </div>
+                    <div>
+                      {data.desc}
+                    </div>
+                  </Inner>
+                  <Inner>
+                    <Slime background={data.gradation} size={20} typenumber={1}/>
+                    <Image src={data.image}/>
+                  </Inner>
+          </SlideInner>
+  )
+}
 
 export default Slider;

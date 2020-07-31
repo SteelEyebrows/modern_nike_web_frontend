@@ -4,7 +4,7 @@ import React from 'react';
 import {Route,Switch} from 'react-router-dom';
 import {routes} from './lib/routes/routes';
 import {Helmet} from 'react-helmet';
-import './App.css';
+
 
 function App() {
 

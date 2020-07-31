@@ -40,3 +40,25 @@ overflow: hidden;
   }
 }
 `;
+export const SlideInner =styled.div`
+    width: 100%;
+    height: 300px;
+    z-index: 5;
+    background-color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+export const Inner =styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+export const Image =styled.img`
+    width: auto; 
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    margin-left: -50%;
+    z-index:10;
+`;

@@ -89,16 +89,16 @@ const Navigaition = ({ page, ...props }) => {
 					<a href="#" >Company</a>
 				</MenuComp>
 				<MenuComp onMouseEnter={hoverMenu2_enter} className={state.isActive2 ? "active" : ""}>
-					<a href="#" >Future</a>
+					<a href="#" >MEN</a>
 				</MenuComp>
 				<MenuComp onMouseEnter={hoverMenu3_enter} className={state.isActive3 ? "active" : ""}>
-					<a href="#" >Business</a>
+					<a href="#" >WOMEN</a>
 				</MenuComp>
 				<MenuComp onMouseEnter={hoverMenu4_enter} className={state.isActive4 ? "active" : ""}>
-					<a href="#" >Products</a>
+					<a href="#" >CUSTOMIZE</a>
 				</MenuComp>
 				<MenuComp onMouseEnter={hoverMenu5_enter} className={state.isActive5 ? "active" : ""}>
-					<a href="#" >Service</a>
+					<a href="#" >CS</a>
 				</MenuComp>
 			</Menu>
 			</div>
@@ -111,32 +111,29 @@ const Navigaition = ({ page, ...props }) => {
 					<li><a href="#">Contact</a></li>
 				</ul>
 				<ul onMouseEnter={hoverMenu2_enter} className="menu-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Holidays</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">Shoes</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Equipment</a></li>
+					<li><a href="#">Jordan</a></li>
 				</ul>
 				<ul onMouseEnter={hoverMenu3_enter} className="menu-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Holidays</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">Shoes</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Equipment</a></li>
+					<li><a href="#">Jordan</a></li>
 				</ul>
 				<ul onMouseEnter={hoverMenu4_enter} className="menu-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Holidays</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">Shoes</a></li>
+					<li><a href="#">Clothing</a></li>
+					<li><a href="#">Accessories</a></li>
+					<li><a href="#">Equipment</a></li>
+					<li><a href="#">Jordan</a></li>
 				</ul>
 				<ul onMouseEnter={hoverMenu5_enter} className="menu-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Holidays</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">FnQ</a></li>
+					<li><a href="#">Contact us</a></li>
 				</ul>
 			</SubMenu>
 		</div>

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {MainTemplate,Navigation} from '../components';
-import {HomeContainer} from '../containers';
+import {ProductContainer} from '../containers';
         
-const Home = () =>(
+const Product = () =>(
     <MainTemplate header={<Navigation/>}>
-        <HomeContainer/>
+        <ProductContainer/>
     </MainTemplate>
 );
 
-export default Home;
+export default Product;

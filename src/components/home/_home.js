@@ -5,6 +5,39 @@ import {SectionSet,SectionOne,SectionTwo,NextButton,SlideInner,Image,Inner} from
 import Slider from './slider';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
 
+const datalist=[
+  {
+    title:"OFF WHITE",
+    desc:"description",
+    gradation:"linear-gradient(#33ccff, #ff9900)",
+    image:"https://i.pinimg.com/originals/fc/c7/10/fcc71020a8c438b5dd33cf6a884586d2.png"
+  },
+  {
+    title:"OFF WHITE",
+    desc:"description",
+    gradation:"linear-gradient(#33ccff, #ff9900)",
+    image:"https://cdn.shopify.com/s/files/1/2358/2817/products/Wethenew-Sneakers-France-Air-Force-1-Off-White-Volt-1_2000x.png?v=1545054586"
+  },
+  {
+    title:"OFF WHITE",
+    desc:"description",
+    gradation:"linear-gradient(#33ccff, #ff9900)",
+    image:"https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/j/aj4585_101_8e_1.png"
+  },
+  {
+    title:"OFF WHITE",
+    desc:"description",
+    gradation:"linear-gradient(#33ccff, #ff9900)",
+    image:"https://images.restocks.eu/products/CT0856-600/nike-dunk-low-off-white-university-red-2-1000.png"
+  },
+  {
+    title:"OFF WHITE",
+    desc:"description",
+    gradation:"linear-gradient(#33ccff, #ff9900)",
+    image:"https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/a/aa3832_700_1.png"
+  },
+]
+
 const Home = ({ departments,images }) => {
 
 	const nextSlide=()=>{
@@ -18,7 +51,6 @@ const Home = ({ departments,images }) => {
 	}
   return (
     <>
-    <Navigation/>
     <SectionSet className="set">			 
           <SectionOne>
             <div>
@@ -39,60 +71,8 @@ const Home = ({ departments,images }) => {
           </SectionOne>
 
 					<SectionTwo>
-            <Slider height="300px" auto speed={3000}>
-                <SlideInner>
-                  <Inner>
-                    <div>
-                      OFF WHITE
-                    </div>
-                    <div>
-                      ffffffffffff
-                    </div>
-                  </Inner>
-                  <Inner>
-                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
-                    <Image src="https://i.pinimg.com/originals/fc/c7/10/fcc71020a8c438b5dd33cf6a884586d2.png"/>
-                  </Inner>
-                </SlideInner>
-                <SlideInner>
-                  <Inner>
-                    ffffffffffff
-                  </Inner>
-                  <Inner>
-                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
-                    <Image src="https://cdn.shopify.com/s/files/1/2358/2817/products/Wethenew-Sneakers-France-Air-Force-1-Off-White-Volt-1_2000x.png?v=1545054586"/>
-                  </Inner>
-                </SlideInner>
-                <SlideInner>
-                  <Inner>
-                    ffffffffffff
-                  </Inner>
-                  <Inner>
-                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
-                    <Image src="https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/j/aj4585_101_8e_1.png"/>
-                  </Inner>
-                </SlideInner>
-                <SlideInner>
-                  <Inner>
-                    ffffffffffff
-                  </Inner>
-                  <Inner>
-                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
-                    <Image src="https://images.restocks.eu/products/CT0856-600/nike-dunk-low-off-white-university-red-2-1000.png"/>
-                  </Inner>
-                </SlideInner>
-                <SlideInner>
-                  <Inner>
-                    ffffffffffff
-                  </Inner>
-                  <Inner>
-                    <Slime background={"linear-gradient(#33ccff, #ff9900)"} size={20} typenumber={1}/>
-                    <Image src="https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/a/aa3832_700_1.png"/>
-                  </Inner>
-                </SlideInner>
-                <SlideInner>
-                  6
-                </SlideInner>
+            <Slider datalist={datalist} height="300px" auto speed={3000}>
+              
             </Slider>
 					</SectionTwo>
 			</SectionSet>

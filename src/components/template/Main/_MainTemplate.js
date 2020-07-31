@@ -1,12 +1,12 @@
 import * as React from 'react';
-import './MainTemplate.scss';
+import {Template} from './_style';
 
 const PageTemplate = ({children,footer,header}) =>(
-    <div className="page-template">
+    <Template>
         {header}
         <main>{children}</main>
         {footer}
-    </div>
+    </Template>
 );
 
 export default PageTemplate;

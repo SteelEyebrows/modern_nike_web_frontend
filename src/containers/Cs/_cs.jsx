@@ -31,7 +31,7 @@ const CsContainer = (props) =>{
         <>
         {
             data.isFatching?
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center',height:'100vh'}}>
                 loading
             </div>:
             <Cs/>

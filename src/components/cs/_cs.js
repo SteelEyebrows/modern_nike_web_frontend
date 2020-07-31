@@ -1,16 +1,18 @@
 import * as React from "react";
-import {Contents} from './_style';
+import {UpperBody,Title,ButtonSet} from './_style';
 
 const Cs = ({ }) => {
 
   return (
     <>
-        <Contents>
-          <div>
-          </div>
-          <div>
-          </div>
-        </Contents>
+        <UpperBody>
+          <Title>
+
+          </Title>
+          <ButtonSet>
+            
+          </ButtonSet>
+        </UpperBody>
 	  </>
     );
   };

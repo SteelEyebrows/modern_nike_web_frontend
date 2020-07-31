@@ -23,6 +23,7 @@ export const MenuComp =styled.li`
         height: 60px;
         z-index:10;
         a{
+            font-family: 'GmarketSansBold';
             color:${props=>props.className=="active"?"red":""};
             text-decoration: none;
         }
@@ -41,11 +42,14 @@ export const SubMenu =styled.div`
     z-index:7;
     color:black;
     ul{
+        text-decoration: none;
         width: 100vw;
         height: 60px;
         border-left: 1px solid #ddd;
         li{
             a{
+                text-decoration: none;
+                font-family: 'GmarketSansLight';
                 color:black;
                 &:hover{
                     color: springgreen;
