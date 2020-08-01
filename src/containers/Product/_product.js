@@ -8,13 +8,11 @@ const ProductContainer = (props) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
 
-    const getProducts =(req)=>dispatch(productsAction.productsRequest(req));
+    const getProducts =()=>dispatch(productsAction.productsRequest());
     
-
     React.useEffect(() => {
-        getProducts("index.json");
+        getProducts();
     },[]);
-
     return(
         <>
         {

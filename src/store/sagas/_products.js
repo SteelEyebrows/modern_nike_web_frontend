@@ -7,9 +7,9 @@ import * as api from "../../lib/api";
 import { productsAction } from "../actions";
 import { call, put, takeEvery } from "redux-saga/effects";
 
-export function* fetchProducts({ payload }) {
+export function* fetchProducts({payload}) {
   try {
-    const { data } = yield call(api.getProducts, payload);
+    const { data } = yield call(api.getProducts, "index.json");
     yield put(productsAction.productsSuccess(data));
 }
   catch(error) {

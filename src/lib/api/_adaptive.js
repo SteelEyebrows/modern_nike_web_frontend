@@ -1,5 +1,5 @@
 import client from "../client";
 
 
-export const setAdatptive = (id) =>
+export const getAdatptive = (id) =>
     client.get(`adaptive/${id}`);

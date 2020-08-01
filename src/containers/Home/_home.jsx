@@ -10,11 +10,11 @@ const HomeContainer = (props) =>{
     const dispatch = useDispatch();
     const { effectiveConnectionType } = useNetworkStatus();
 
-    const setAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
+    const getAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
     
 
     React.useEffect(() => {
-        setAdaptive(effectiveConnectionType);
+        getAdaptive(effectiveConnectionType);
     },[]);
     
 

@@ -1,5 +1,5 @@
 import {
-    SET_ADAPTIVE,
+    GET_ADAPTIVE,
     REQUEST,
     SUCCESS,
     FAILURE
@@ -13,12 +13,12 @@ import {
   
   export default function (state = initialState, action){
     switch (action.type) {
-      case SET_ADAPTIVE[REQUEST]:
+      case GET_ADAPTIVE[REQUEST]:
         return {
           ...state,
           isFatching:true
         };
-      case SET_ADAPTIVE[SUCCESS]:
+      case GET_ADAPTIVE[SUCCESS]:
         const {payload} =action;
         console.log(payload);
         return {
@@ -26,7 +26,7 @@ import {
           images:payload,
           isFatching:false
         };
-      case SET_ADAPTIVE[FAILURE]:
+      case GET_ADAPTIVE[FAILURE]:
         return {
           ...state,
         };

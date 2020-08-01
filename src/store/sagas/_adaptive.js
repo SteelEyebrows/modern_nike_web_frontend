@@ -1,6 +1,6 @@
 
 import {
-    SET_ADAPTIVE,
+    GET_ADAPTIVE,
     REQUEST,
   } from "../constants";
 import * as api from "../../lib/api";
@@ -10,7 +10,7 @@ import { call, put, takeEvery } from "redux-saga/effects";
 
 export function* fetchAdaptive({ payload }) {
   try {
-    const { data } = yield call(api.setAdatptive,"adaptive.json");
+    const { data } = yield call(api.getAdatptive,"index.json");
     yield put(adaptiveAction.adaptiveSuccess(data.images[payload]));
 }
   catch(error) {
@@ -19,5 +19,5 @@ export function* fetchAdaptive({ payload }) {
 }
 
 export default function* watchAdaptive() {
-  yield takeEvery([SET_ADAPTIVE[REQUEST]], fetchAdaptive);
+  yield takeEvery([GET_ADAPTIVE[REQUEST]], fetchAdaptive);
 }
