@@ -1,18 +1,22 @@
 import * as React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import { productsAction } from "../../store/actions";
+import { productsAction,detailAction } from "../../store/actions";
+import { withRouter } from "react-router-dom";
 import {Products} from '../../components';
 
 
-const ProductContainer = (props) =>{
+const ProductContainer = ({history,match}) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
 
     const getProducts =()=>dispatch(productsAction.productsRequest());
-    
+
     React.useEffect(() => {
-        getProducts();
+        getProducts()
     },[]);
+
+    const goDetail=(id,color)=>history.push(`/detail/${id}/${color}`);
+
     return(
         <>
         {
@@ -20,7 +24,7 @@ const ProductContainer = (props) =>{
             <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                 loading
             </div>:
-            <Products list={data.list}/>
+            <Products goDetail={goDetail} list={data.list}/>
         } 
         </>
     );
@@ -30,4 +34,4 @@ const mapStateToProps = (rootReducer)=>({//reducers => case
     list:rootReducer.products.list,
 });
 
-export default ProductContainer;
+export default withRouter(ProductContainer);

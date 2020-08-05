@@ -2,6 +2,7 @@ import * as React from "react";
 import Slime from './slime/_slime';
 import Navigation from '../navigation';
 import {SectionSet,SectionOne,SectionTwo,NextButton,SlideInner,Image,Inner} from './_style';
+import { withRouter } from "react-router-dom";
 import Slider from './slider';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
 
@@ -80,4 +81,4 @@ const Home = ({ departments,images }) => {
     );
   };
 
-export default Home;
+export default withRouter(Home);

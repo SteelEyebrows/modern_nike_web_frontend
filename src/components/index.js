@@ -3,3 +3,4 @@ export {default as Cs} from './cs';
 export {default as Navigation} from './navigation';
 export {default as Products} from './products';
 export {MainTemplate} from './template';
+export {default as Detail} from './detail';

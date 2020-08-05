@@ -2,9 +2,9 @@ import * as React from 'react';
 import {MainTemplate,Navigation} from '../components';
 import {ProductContainer} from '../containers';
         
-const Product = () =>(
+const Product = ({history}) =>(
     <MainTemplate header={<Navigation/>}>
-        <ProductContainer/>
+        <ProductContainer history={history}/>
     </MainTemplate>
 );
 

@@ -1,5 +1,5 @@
 import {
-    GET_PRODUCTS,
+    GET_DETAIL,
     REQUEST,
     SUCCESS,
     FAILURE
@@ -7,23 +7,26 @@ import {
   import _ from "underscore";
 
   const initialState= {
-    list:[]
+    detail:{},
+    isFatching:true,
   };
   
   export default function (state = initialState, action){
     switch (action.type) {
-      case GET_PRODUCTS[REQUEST]:
-        console.log(`GET_PRODUCTS[REQUST]`);
+      case GET_DETAIL[REQUEST]:
         return {
           ...state,
         };
-      case GET_PRODUCTS[SUCCESS]:
+      case GET_DETAIL[SUCCESS]:
         const {payload} =action;
+        console.log("this")
+        console.log(payload)
         return {
           ...state,
-          list:payload.list
+          detail:payload,
+          isFatching:false
         };
-      case GET_PRODUCTS[FAILURE]:
+      case GET_DETAIL[FAILURE]:
         return {
           ...state,
         };
