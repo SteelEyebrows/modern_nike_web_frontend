@@ -16,13 +16,12 @@ const Products = ({goDetail,list}) => {
 	const intersection = useIntersection(trigger, { //스크롤 반응
 		root: null,
 		rootMargin: '0px',
-		threshold: 0.2,
+		threshold: 0.5,
 	});
 
 	const indexOfLastPost =  currentPage * postPerPage;
 	const indexOfFirstPost = indexOfLastPost - postPerPage;
 	const currentPost = list.slice(indexOfFirstPost,indexOfLastPost);
-
 	const paginate = pageNumber => setCurrentPage(pageNumber);
 	
 	React.useEffect(
@@ -47,11 +46,42 @@ const Products = ({goDetail,list}) => {
 
 	return (
     <>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 		<ProductList ref={trigger}>
 			{
 				currentPost.map((item)=>{
 					return(
-						<div onClick={()=>goDetail(item.id,item.colors[0].color)} className="container">
+						<div key={item.id} onClick={()=>goDetail(item.id,item.colors[0].color)} className="container">
 							<img src={item.colors[0].images[0]} alt={item.name} className="image" />
 							<div className="label">
 								<div className="name">{item.name}</div>

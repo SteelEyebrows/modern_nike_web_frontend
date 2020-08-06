@@ -2,18 +2,18 @@ import styled, { keyframes } from 'styled-components';
 
 
 export const LoginModal =styled.div`
-.my-modal-wrapper {
+  .wrapper {
     opacity: 0;
     visibility: hidden;
     position: fixed;
     z-index: 10000;
     top: 0;
     left: 0;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
   }
   
-  .my-modal-veil {
+  .veil {
     background-color: #333333;
     opacity: 0;
     visibility: hidden;
@@ -21,11 +21,11 @@ export const LoginModal =styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 1;
   }
   
-  .my-modal-content {
+  .content {
     position: absolute;
     padding: 1.5em;
     border-radius: 5px;
@@ -37,18 +37,40 @@ export const LoginModal =styled.div`
     opacity: 0;
     visibility: hidden;
     z-index: 2;
-    .form-signin{
-        display: inline-block;
-        vertical-align: middle;
-    }
     .logo{
         width:100px;
         height:auto;
     }
+    form{
+        vertical-align: middle;
+        .input{
+            width: 250px;
+            height:35px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button{
+            background-color: #000; 
+            border: none;
+            color: white;
+            width:250px;
+            height:30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin:5px;
+        }
+    }
+    .signUp{
+        color:#696969;
+        font-size:0.5em;
+    }
   }
   
   @media (min-width: 768px) {
-    .my-modal-content {
+    .content {
       max-width: 50%;
     }
   }

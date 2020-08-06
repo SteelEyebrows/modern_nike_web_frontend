@@ -3,14 +3,14 @@ import {
     GET_AWS,
     REQUEST,
   } from "../constants";
-import * as api from "../../lib/api";
+import {Aws} from "../../lib/api";
 import { awsAction } from "../actions";
 import { call, put, takeEvery } from "redux-saga/effects";
 
 
 export function* fetchAws({ payload }) {
   try {
-    const  data  = yield call(api.getAws,payload);
+    const  data  = yield call(Aws.getAws,payload);
     console.log(data);
 
 }

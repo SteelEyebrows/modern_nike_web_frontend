@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {MainTemplate,Navigation} from '../components';
-import {HomeContainer} from '../containers';
+import {MainTemplate} from '../components';
+import {HomeContainer,NavigationContainer} from '../containers';
         
 const Home = () =>(
-    <MainTemplate header={<Navigation/>}>
+    <MainTemplate header={<NavigationContainer/>}>
         <HomeContainer/>
     </MainTemplate>
 );

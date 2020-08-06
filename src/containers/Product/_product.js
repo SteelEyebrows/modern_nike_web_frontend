@@ -10,9 +10,12 @@ const ProductContainer = ({history,match}) =>{
     const dispatch = useDispatch();
 
     const getProducts =()=>dispatch(productsAction.productsRequest());
+    const resetDetail =()=>dispatch(detailAction.detailSuccess({}));
+
 
     React.useEffect(() => {
-        getProducts()
+        getProducts();
+        resetDetail();
     },[]);
 
     const goDetail=(id,color)=>history.push(`/detail/${id}/${color}`);

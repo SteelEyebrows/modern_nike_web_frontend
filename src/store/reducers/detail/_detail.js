@@ -16,11 +16,10 @@ import {
       case GET_DETAIL[REQUEST]:
         return {
           ...state,
+          isFatching:true
         };
       case GET_DETAIL[SUCCESS]:
         const {payload} =action;
-        console.log("this")
-        console.log(payload)
         return {
           ...state,
           detail:payload,

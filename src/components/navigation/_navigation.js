@@ -1,12 +1,13 @@
 import React, { StatelessComponent,useState } from 'react';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import { Auth} from 'aws-amplify';
 import {Navbar,MenuContainer,Lnb,Menu,MenuComp,SubMenu} from './_style';
 import Login from './login'
 // https://codepen.io/jonathan/pen/QOrjJj
 // https://webdesign.tutsplus.com/tutorials/how-to-build-a-mega-menu-with-flexbox--cms-33540
 
 
-const Navigaition = ({ page, ...props }) => {
+const Navigaition = ({ user,isAuthenticated,postLogin,postLogOut }) => {
 	const [isHover, set] = useState(false);
 	const [state, setState] = useState({
 		isActive1: false,
@@ -92,12 +93,22 @@ const Navigaition = ({ page, ...props }) => {
 			<img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} alt="logo" className="logo" />
 			<Lnb>
 				<div className="mypage">
-					<div className="login" onClick={toggleLogin}>
-						Login /
-					</div>
-					<Login close={toggleLogin} show={loginVisible} />
-					<p>       </p>
-					<a href="#" >장바구니</a>
+					{
+						isAuthenticated?
+						<div className="mypage__authenticated">
+							{user.username}님 반갑습니다!
+							<div onClick={postLogOut} className="mypage__authenticated__logout">
+								logout
+							</div>
+						</div>:
+						<div className="mypage__unauthenticated">
+							<div className="login" onClick={toggleLogin}>Login /</div>
+							<Login postLogin={postLogin} close={toggleLogin} show={loginVisible} />
+							<p>       </p>
+							<a href="#" >장바구니</a>
+						</div>
+					}
+
 				</div>
 			</Lnb>
 			<MenuContainer>

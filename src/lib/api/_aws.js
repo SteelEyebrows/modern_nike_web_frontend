@@ -7,3 +7,7 @@ import {API, graphqlOperation } from 'aws-amplify';
 
 export const getAws = async(query) => 
   await API.graphql(graphqlOperation(query));
+
+  export default {
+    getAws
+};

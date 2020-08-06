@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 const DetailContainer = ({history,match}) =>{
     const [ quantity, setQuantity ] = React.useState(1);
-
+    const [ size, setSize ] = React.useState("");
 
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
@@ -14,8 +14,7 @@ const DetailContainer = ({history,match}) =>{
     const getDetail =(id)=>dispatch(detailAction.detailRequest(id));
     const clickColorSelector =(color)=> history.push(`/detail/${match.params.id}/${color}`);
     const onChangeQuantity = (quantity) => setQuantity(quantity);
- 
-
+    const onChangeSize = (size) => setSize(size)
 
     React.useEffect(() => {
         getDetail(match.params.id);
@@ -24,16 +23,19 @@ const DetailContainer = ({history,match}) =>{
     return(
         <>
             {
-            data.isFatching?
+             data.isFatching?
             <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                 loading
             </div>:
+            // <div>{`${data.detail.id}=== ${match.params.id} `}</div>
             <Detail 
                 item={data.detail} 
                 quantity={quantity}
+                size={size}
                 color={match.params.color} 
                 clickColorSelector={clickColorSelector}
                 onChangeQuantity ={onChangeQuantity}
+                onChangeSize={onChangeSize}
             />
             } 
         </>

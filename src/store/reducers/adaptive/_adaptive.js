@@ -20,7 +20,6 @@ import {
         };
       case GET_ADAPTIVE[SUCCESS]:
         const {payload} =action;
-        console.log(payload);
         return {
           ...state,
           images:payload,

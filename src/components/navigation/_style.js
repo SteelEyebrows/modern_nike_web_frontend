@@ -26,11 +26,13 @@ export const Lnb =styled.div`
         position:absolute;
         display: flex;
         right:60px;
-        a{
-            margin:5px;
-            text-decoration: none;
+        &__authenticated{
+            color:#696969;
+            &__logout{
+                background-color:pink;
+            }
         }
-        .login{
+        &__unauthenticated{
             color:#696969;
         }
     }

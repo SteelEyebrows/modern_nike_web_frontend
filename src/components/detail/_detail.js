@@ -8,20 +8,23 @@ import {Button} from '../common';
 const Detail = ({
     item,
     quantity,
+    size,
     color,
     clickColorSelector,
-    onChangeQuantity
+    onChangeQuantity,
+    onChangeSize
 }) => {
-    const allSize=[240,245,250,255,260,265,270,275,280,285,290,295,300,305,310,320,330]
-	return (
+    const allSizes=["240","245","250","255","260","265","270","275","280","285","290","295","300","305","310"];
+    
+    return (
     <>
     <DetailContainer>
         <div className="right_imageSet">
             {
-                item &&
+                item.colors &&
                 item.colors[color].images.map((img,i)=>{
                     return(
-                        <img key={i} src={img} alt={i} className="image"/>
+                        <img key={`image${i}`} src={img} alt={i} className="image"/>
                     )
                 })
             }
@@ -40,18 +43,56 @@ const Detail = ({
             </div>
             <div className="colorSelector">
                 {
-                    item &&
+                    item.colors &&
                     Object.keys(item.colors).map(i =>{
                         return(
-                            <div onClick={()=>clickColorSelector(i)}>
-                            <img 
-                                key={i} 
-                                src={item.colors[i].images[0]} 
-                                alt={i} 
-                                className="color"
-                            />
+                            <div 
+                                className="colorSelector__color" 
+                                key={`color${i}`} 
+                                onClick={()=>clickColorSelector(i)}
+                            >
+                                <img  
+                                    src={item.colors[i].images[0]} 
+                                    alt={i} 
+                                />
                             </div>
                         )
+                    })
+                }
+            </div>
+            <div className="sizeSelector">
+                {
+                    item.colors &&
+                    allSizes.map((mapped)=>{
+                        if(item.colors[color].sizes.indexOf(mapped)!==-1){
+                            if(mapped === size){
+                                return(
+                                    <div 
+                                        key={`size${mapped}`} 
+                                        onClick={() =>onChangeSize(mapped)}
+                                        className="sizeSelector__inStock__clicked">
+                                            {mapped}
+                                    </div>
+                                )
+                            }else{
+                                return(
+                                    <div 
+                                        key={`size${mapped}`} 
+                                        onClick={() =>onChangeSize(mapped)}
+                                        className="sizeSelector__inStock">
+                                            {mapped}
+                                    </div>
+                                )
+                            }
+                        }else{
+                            return(
+                                <div 
+                                    key={`size${mapped}`} 
+                                    className="sizeSelector__soldOut">
+                                        {mapped}
+                                </div>
+                            )
+                        }
                     })
                 }
             </div>

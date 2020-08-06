@@ -1,9 +1,9 @@
 import * as React from "react";
-import { MainTemplate,Navigation } from "../components";
-import { DetailContainer } from "../containers";
+import { MainTemplate} from "../components";
+import { DetailContainer,NavigationContainer } from "../containers";
 
 const Detail = () => (
-  <MainTemplate header={<Navigation />}>
+  <MainTemplate header={<NavigationContainer />}>
     <DetailContainer />
   </MainTemplate>
 );

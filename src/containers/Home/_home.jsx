@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import { departmentAction,adaptiveAction } from "../../store/actions";
+import { adaptiveAction } from "../../store/actions";
 import {Home} from '../../components';
 import { useNetworkStatus } from 'react-adaptive-hooks/network';
 

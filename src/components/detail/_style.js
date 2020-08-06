@@ -7,8 +7,7 @@ export const DetailContainer =styled.div`
     width: 100%;
     .right_imageSet{
         display:grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 33% 33% 33%;
+        grid-template-columns: repeat(2, 1fr);
         width:55%;
         .image{
             display: flex;
@@ -44,17 +43,38 @@ export const DetailContainer =styled.div`
         }
         .colorSelector{
             display:flex;
-            height:150px;
+            height:auto;
             background-color:yellow;
-            .color{
-                width:100px;
-                height:100px;
-                margin:4px;
+            &__color{
+                img{
+                    width:100px;
+                    height:100px;
+                    margin:4px;
+                }
                 &:hover {
                     opacity: 0.7;
                   }
             }
         }
+        .sizeSelector{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            &__inStock{
+                width:50px;
+                border: 1px solid #000;
+                margin: 0 auto;
+                &__clicked{
+                    background-color:black;
+                    color:white;
+                }
+            }
+            &__soldOut{
+                width:50px;
+                border: 1px solid #ddd;
+                margin: 2px auto;
+            }
+        }
+
         .quantity{
             height:100px;
             background-color:pink;
