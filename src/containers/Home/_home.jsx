@@ -11,7 +11,6 @@ const HomeContainer = (props) =>{
     const { effectiveConnectionType } = useNetworkStatus();
 
     const getAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
-    
 
     React.useEffect(() => {
         getAdaptive(effectiveConnectionType);
@@ -25,7 +24,7 @@ const HomeContainer = (props) =>{
             <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                 loading
             </div>:
-            <Home departments={data.departments} images={data.images}/>
+            <Home images={data.images}/>
         } 
         </>
     );
@@ -34,7 +33,6 @@ const HomeContainer = (props) =>{
 const mapStateToProps = (rootReducer)=>({//reducers => case
     isFatching:rootReducer.adaptive.isFatching,
     images:rootReducer.adaptive.images,
-    departments:rootReducer.departments.departments
 });
 
 export default HomeContainer;

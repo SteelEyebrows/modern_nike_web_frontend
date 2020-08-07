@@ -41,8 +41,7 @@ export const LoginModal =styled.div`
         width:100px;
         height:auto;
     }
-    form{
-        vertical-align: middle;
+
         .input{
             width: 250px;
             height:35px;
@@ -62,7 +61,7 @@ export const LoginModal =styled.div`
             font-size: 1em;
             margin:5px;
         }
-    }
+    
     .signUp{
         color:#696969;
         font-size:0.5em;

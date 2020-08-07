@@ -4,7 +4,7 @@ export const Navbar =styled.div`
 .logo{
     position:absolute;
     z-index:11;
-    margin-top:30px;
+    margin-top:15px;
     margin-left:25px;
     width:70px;
     height:auto;

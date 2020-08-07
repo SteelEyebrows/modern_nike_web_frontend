@@ -1,4 +1,4 @@
-import {Login,Cs,Home,Products,Detail} from '../../page';
+import {Login,Cs,Home,Products,Detail,Register} from '../../page';
 
 
 export const routes =[
@@ -23,6 +23,11 @@ export const routes =[
     {
         path: "/detail/:id/:color",
         page: Detail,
+        exact: true
+    },
+    {
+        path: "/register",
+        page: Register,
         exact: true
     },
 ]

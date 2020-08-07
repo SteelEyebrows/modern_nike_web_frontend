@@ -12,10 +12,11 @@ const DetailContainer = ({history,match}) =>{
     const dispatch = useDispatch();
 
     const getDetail =(id)=>dispatch(detailAction.detailRequest(id));
-    const clickColorSelector =(color)=> history.push(`/detail/${match.params.id}/${color}`);
+    
     const onChangeQuantity = (quantity) => setQuantity(quantity);
     const onChangeSize = (size) => setSize(size)
 
+    const clickColorSelector =(color)=> history.push(`/detail/${match.params.id}/${color}`);
     React.useEffect(() => {
         getDetail(match.params.id);
     },[]);
@@ -27,7 +28,6 @@ const DetailContainer = ({history,match}) =>{
             <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
                 loading
             </div>:
-            // <div>{`${data.detail.id}=== ${match.params.id} `}</div>
             <Detail 
                 item={data.detail} 
                 quantity={quantity}

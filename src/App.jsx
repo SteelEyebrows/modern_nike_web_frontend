@@ -14,20 +14,19 @@ function App() {
       Auth: {
         mandatorySignIn: true,
         region: "ap-northeast-2",
-        userPoolId: "ap-northeast-2_O6h5CbYvt",
-        userPoolWebClientId: "qolqi2gi7svqi7p7dchsltq10"
+        userPoolId: process.env.REACT_APP_AWS_COGNITO_USER_POOL_ID,
+        userPoolWebClientId: process.env.REACT_APP_AWS_COGNITO_APP_CLIENT_ID
       },
       Storage: {
         AWSS3: {
             bucket: 'verdemo', //REQUIRED -  Amazon S3 bucket
             region: 'ap-northeast-2', //OPTIONAL -  Amazon service region
-        }
-    },
+        }},
       "aws_project_region": "ap-northeast-2",
-      "aws_appsync_graphqlEndpoint": "https://6rha74vb45elpo6wue7tw2ladm.appsync-api.ap-northeast-2.amazonaws.com/graphql",
+      "aws_appsync_graphqlEndpoint": process.env.REACT_APP_AWS_GRAPHQL_ENDPOINT,
       "aws_appsync_region": "ap-northeast-2",
-      "aws_appsync_authenticationType": "API_KEY",
-      "aws_appsync_apiKey": "da2-53xamyyb3vagfcwl5xylphc43u"
+      "aws_appsync_authenticationType": process.env.REACT_APP_AWS_AUTHENTICATION_TYPE,
+      "aws_appsync_apiKey": process.env.REACT_APP_AWS_API_KEY
     });
   }, []);
 

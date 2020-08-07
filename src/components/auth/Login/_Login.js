@@ -1,15 +1,18 @@
 import React, { useState,useEffect, useRef } from "react";
-import ReactDOM from "react-dom";
-import { Auth } from "aws-amplify";
 import { gsap } from "gsap";
 import {LoginModal} from"./_style";
 
 // https://codesandbox.io/s/gsap-powered-modal-bobdj?file=/src/Modal.js
 // https://codesandbox.io/s/login-form-nested-state-starter-924-w84fr?file=/src/styles.css:115-243
 
-const Login = ({postLogin,close,show}) => {
+const Login = ({postLogin}) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [loginVisible, setLoginVisible] = useState(false);
+
+  const toggleLogin = () => {
+    setLoginVisible(!loginVisible);
+  };
 
   const tl = useRef(gsap.timeline({ paused: true }));
 
@@ -17,10 +20,8 @@ const Login = ({postLogin,close,show}) => {
   let modalWrapper = null;
   let modalContent = null;
 
-
-  const onInputUsername = event => setUserName( event.target.value);
-  const onInputPassword = event => setPassword( event.target.value);
-
+  const onChangeUsername = event => setUserName( event.target.value);
+  const onChangePassword = event => setPassword( event.target.value);
 
   const handleSubmit =async event=>{
     try {
@@ -42,10 +43,12 @@ const Login = ({postLogin,close,show}) => {
   }, []);
 
   useEffect(() => {
-    tl.current.reversed(!show);
-  }, [show]);
+    tl.current.reversed(!loginVisible);
+  }, [loginVisible]);
 
-  return ReactDOM.createPortal(
+  return (
+    <div>
+    <div className="login" onClick={toggleLogin}>Login /</div>
     <LoginModal>
         <div className="wrapper" ref={e => (modalWrapper = e)}>
         <div align="center" className="content" ref={e => (modalContent = e)}>
@@ -58,14 +61,14 @@ const Login = ({postLogin,close,show}) => {
                 type="text"
                 name="username"
                 placeholder="Email Address"
-                onChange={onInputUsername}
+                onChange={onChangeUsername}
                 /><br/>
                 <input
                 className="input"
                 type="password"
                 name="password"
                 placeholder="Password"
-                onChange={onInputPassword}
+                onChange={onChangePassword}
                 /><br/>
                 <label className="checkbox">
                 <input
@@ -87,11 +90,11 @@ const Login = ({postLogin,close,show}) => {
         <div
             className="veil"
             ref={e => (modalVeil = e)}
-            onClick={close}
+            onClick={toggleLogin}
         />
         </div>
-    </LoginModal>,
-    document.body
+    </LoginModal>
+    </div>
   );
 };
 

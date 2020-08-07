@@ -39,7 +39,7 @@ const datalist=[
   },
 ]
 
-const Home = ({ departments,images }) => {
+const Home = ({ images }) => {
 
 	const nextSlide=()=>{
 		var tl = new TimelineMax()

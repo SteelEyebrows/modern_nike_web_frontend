@@ -1,92 +1,26 @@
 import React, { StatelessComponent,useState } from 'react';
-import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
-import { Auth} from 'aws-amplify';
 import {Navbar,MenuContainer,Lnb,Menu,MenuComp,SubMenu} from './_style';
-import Login from './login'
+import {Login} from '../auth'
+
 // https://codepen.io/jonathan/pen/QOrjJj
 // https://webdesign.tutsplus.com/tutorials/how-to-build-a-mega-menu-with-flexbox--cms-33540
 
 
-const Navigaition = ({ user,isAuthenticated,postLogin,postLogOut }) => {
-	const [isHover, set] = useState(false);
-	const [state, setState] = useState({
-		isActive1: false,
-		isActive2: false,
-		isActive3: false,
-		isActive4: false,
-		isActive5: false,
-	  });
-	  const [loginVisible, setLoginVisible] = useState(false);
+const Navigaition = ({ 
+	user,
+	isAuthenticated,
+	postLogin,
+	postLogOut ,
 
-	  const toggleLogin = () => {
-		setLoginVisible(!loginVisible);
-	  };
-	const onMouseEnterHandler = () => {
-		let tl = new TimelineMax({paused:true});
-		tl.to(".submenu", 0.1, { //메뉴 내리기
-			height:'250px',
-			opacity:1,
-			ease:Sine.easeOut
-		  }).play();
-	  };
-
-	  const onMouseLeaveHandler = () => {
-		let tl2 = new TimelineMax({paused:true});
-		tl2.to(".submenu", 0.1, {
-			height:'0px',
-			opacity:0,
-			ease:Sine.easeOut
-		  }).play();
-
-		setState({ 
-			isActive1: false,
-			isActive2: false,
-			isActive3: false,
-			isActive4: false,
-			isActive5: false 
-		});
-	  };
-
-	  const hoverMenu1_enter = () => {
-		setState({ 
-			isActive1: true,
-			isActive2: false,
-			isActive3: false,
-			isActive4: false,
-			isActive5: false });
-	  };
-	  const hoverMenu2_enter = () => {
-		setState({ 
-			isActive1: false,
-			isActive2: true,
-			isActive3: false,
-			isActive4: false,
-			isActive5: false });
-	  };
-	  const hoverMenu3_enter = () => {
-		setState({ 
-			isActive1: false,
-			isActive2: false,
-			isActive3: true,
-			isActive4: false,
-			isActive5: false });
-	  };
-	  const hoverMenu4_enter = () => {
-		setState({ 
-			isActive1: false,
-			isActive2: false,
-			isActive3: false,
-			isActive4: true,
-			isActive5: false });
-	  };
-	  const hoverMenu5_enter = () => {
-		setState({ 
-			isActive1: false,
-			isActive2: false,
-			isActive3: false,
-			isActive4: false,
-			isActive5: true });
-	  };
+	state,
+	onMouseEnterHandler,
+    onMouseLeaveHandler,
+    hoverMenu1_enter,
+    hoverMenu2_enter,
+    hoverMenu3_enter,
+    hoverMenu4_enter,
+    hoverMenu5_enter
+}) => {
 
 	return (
 		<Navbar>
@@ -102,9 +36,7 @@ const Navigaition = ({ user,isAuthenticated,postLogin,postLogOut }) => {
 							</div>
 						</div>:
 						<div className="mypage__unauthenticated">
-							<div className="login" onClick={toggleLogin}>Login /</div>
-							<Login postLogin={postLogin} close={toggleLogin} show={loginVisible} />
-							<p>       </p>
+							<Login postLogin={postLogin}/>
 							<a href="#" >장바구니</a>
 						</div>
 					}

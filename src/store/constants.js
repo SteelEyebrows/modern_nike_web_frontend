@@ -19,5 +19,5 @@ export const GET_DETAIL = createRequestTypes("GET_DETAIL");
 
 export const POST_LOGIN = createRequestTypes("POST_LOGIN");
 export const POST_LOGOUT = createRequestTypes("POST_LOGOUT");
-
+export const POST_REGISTER = createRequestTypes("POST_REGISTER");
 // {REQUEST: "GET_DEPARTMENTS_REQUEST", SUCCESS: "GET_DEPARTMENTS_SUCCESS", FAILURE: "GET_DEPARTMENTS_FAILURE"}
