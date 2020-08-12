@@ -1,4 +1,5 @@
 import * as React from "react";
+import {StyledPagenation} from './_style';
 
 const Pagination = ({postPerPage,totalPosts,paginate}) =>{
     const pageNumbers = [];
@@ -8,7 +9,7 @@ const Pagination = ({postPerPage,totalPosts,paginate}) =>{
     }
 
     return(
-        <nav>
+        <StyledPagenation>
             <ul>
                 {
                     pageNumbers.map(num=>(
@@ -18,7 +19,7 @@ const Pagination = ({postPerPage,totalPosts,paginate}) =>{
                     ))
                 }
             </ul>
-        </nav>
+        </StyledPagenation>
     )
 }
 

@@ -11,9 +11,6 @@ const NavigationContainer = ({history,match}) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
 
-    const postLogin =(user)=>dispatch(authAction.loginRequest(user));
-    const postLogOut =()=>dispatch(authAction.logOutRequest());
-
     //animation
     const [state, setState] = React.useState({
 		isActive1: false,
@@ -25,7 +22,7 @@ const NavigationContainer = ({history,match}) =>{
     const onMouseEnterHandler = () => {
 		let tl = new TimelineMax({paused:true});
 		tl.to(".submenu", 0.1, { //메뉴 내리기
-			height:'250px',
+			height:'300px',
 			opacity:1,
 			ease:Sine.easeOut
 		  }).play();
@@ -92,11 +89,6 @@ const NavigationContainer = ({history,match}) =>{
     return(
         <>
             <Navigation 
-                user={data.user}
-                isAuthenticated={data.isAuthenticated}
-                postLogin={postLogin}
-                postLogOut={postLogOut}
-
                 state={state}
                 onMouseEnterHandler={onMouseEnterHandler}
                 onMouseLeaveHandler={onMouseLeaveHandler}
@@ -112,8 +104,7 @@ const NavigationContainer = ({history,match}) =>{
   }
 
 const mapStateToProps = (rootReducer)=>({//reducers => case
-    user: rootReducer.auth.user,
-    isAuthenticated: rootReducer.auth.isAuthenticated,
+
 });
 
 export default withRouter(NavigationContainer);

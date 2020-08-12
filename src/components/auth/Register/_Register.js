@@ -1,6 +1,9 @@
 import * as React from "react";
 import { withRouter } from "react-router-dom";
 import {RegisterContainer} from './_style';
+import { useForm } from "react-hook-form";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers";
 
 const policy=`
 제1조 (목적)

@@ -1,6 +1,30 @@
 import styled, { keyframes } from 'styled-components';
 
 
+export const Lnb =styled.div`
+    z-index:100;
+    height:30px;
+    position:absolute;
+    display: flex;
+    right:60px;
+
+        .authenticated{
+            display: flex;
+            color:#696969;
+            &__logout{
+                background-color:pink;
+            }
+        }
+        .unauthenticated{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'GmarketSansLight';
+            color:#696969;
+        }
+    
+`;
+
 export const LoginModal =styled.div`
   .wrapper {
     opacity: 0;
@@ -41,30 +65,31 @@ export const LoginModal =styled.div`
         width:100px;
         height:auto;
     }
+    form{
+      .input{
+        width: 250px;
+        height:35px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+    button{
+        background-color: #000; 
+        border: none;
+        color: white;
+        width:250px;
+        height:30px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1em;
+        margin:5px;
+    }
 
-        .input{
-            width: 250px;
-            height:35px;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
-        button{
-            background-color: #000; 
-            border: none;
-            color: white;
-            width:250px;
-            height:30px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1em;
-            margin:5px;
-        }
-    
-    .signUp{
-        color:#696969;
-        font-size:0.5em;
+      .signUp{
+          color:#696969;
+          font-size:0.5em;
+      }
     }
   }
   

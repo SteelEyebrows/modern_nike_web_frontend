@@ -23,6 +23,9 @@ export const ProductList =styled.div`
 		overflow: hidden;
 		transition: 0.3s;
         background:green;
+        .colors{
+            font-family: 'GmarketSansLight';
+        }
 		&:hover {
 			
 		}
@@ -33,13 +36,16 @@ export const ProductList =styled.div`
             width:60%;
             height:50px;
             background:red;
+            font-family: 'GmarketSansBold';
         }
         .price{
             width:40%;
             height:50px;
             background:pink;
+            font-family: 'GmarketSansLight';
         }
     }
+
 	.image {
         display: block;
         width: 100%;

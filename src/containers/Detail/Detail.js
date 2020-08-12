@@ -3,6 +3,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import { detailAction } from "../../store/actions";
 import {Detail} from '../../components';
 import { withRouter } from "react-router-dom";
+import {Loading} from '../../components/common';
 
 const DetailContainer = ({history,match}) =>{
     const [ quantity, setQuantity ] = React.useState(1);
@@ -25,9 +26,7 @@ const DetailContainer = ({history,match}) =>{
         <>
             {
              data.isFatching?
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                loading
-            </div>:
+            <Loading />:
             <Detail 
                 item={data.detail} 
                 quantity={quantity}

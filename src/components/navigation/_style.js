@@ -16,26 +16,8 @@ export const MenuContainer =styled.div`
     align-items: center;
     justify-content: center;
     width: 100vw;
+    height:60px;
     text-align: center;
-`;
-
-export const Lnb =styled.div`
-    z-index:15;
-    height:30px;
-    .mypage{
-        position:absolute;
-        display: flex;
-        right:60px;
-        &__authenticated{
-            color:#696969;
-            &__logout{
-                background-color:pink;
-            }
-        }
-        &__unauthenticated{
-            color:#696969;
-        }
-    }
 `;
 
 export const Menu =styled.div`
@@ -67,6 +49,7 @@ export const MenuComp =styled.li`
 
 export const SubMenu =styled.div`
     position: absolute;
+    top:0;
     left:0;
     z-index:7;
     opacity: 0;

@@ -3,6 +3,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import { awsAction } from "../../store/actions";
 import {Cs} from '../../components';
 import {API, graphqlOperation } from 'aws-amplify';
+import {Loading} from '../../components/common';
 
 const queryCstudent=`
 query list{
@@ -31,9 +32,7 @@ const CsContainer = (props) =>{
         <>
         {
             data.isFatching?
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center',height:'100vh'}}>
-                loading
-            </div>:
+            <Loading />:
             <Cs/>
         } 
         </>

@@ -57,13 +57,13 @@ const Products = ({
 								<div className="name">{item.name}</div>
 								<div className="price">{item.price} 원</div>
 							</div>
-							{item.colors.length}컬러
+							<div className="colors">{item.colors.length}컬러</div>
 						</div>
 					)
 				})
 			}
-			<Pagination paginate={paginate} postPerPage={postPerPage} totalPosts={list.length}/>
 		</ProductList>
+		<Pagination paginate={paginate} postPerPage={postPerPage} totalPosts={list.length}/>
     </>
 	);
 };

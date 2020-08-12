@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { adaptiveAction } from "../../store/actions";
 import {Home} from '../../components';
+import {Loading} from '../../components/common';
 import { useNetworkStatus } from 'react-adaptive-hooks/network';
 
 
@@ -21,10 +22,9 @@ const HomeContainer = (props) =>{
         <>
         {
             data.isFatching?
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                loading
-            </div>:
-            <Home images={data.images}/>
+            <Loading />
+            :
+            <Home images={data.images} />
         } 
         </>
     );

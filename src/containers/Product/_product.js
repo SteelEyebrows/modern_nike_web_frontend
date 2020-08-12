@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import {Products} from '../../components';
 import useIntersection from 'react-use/lib/useIntersection';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import {Loading} from '../../components/common';
 
 const ProductContainer = ({history,match}) =>{
 
@@ -65,9 +66,7 @@ const ProductContainer = ({history,match}) =>{
         <>
         {
             data.isFatching?
-            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-                loading
-            </div>:
+            <Loading />:
             <Products 
                 list={data.list}
                 trigger={trigger}
