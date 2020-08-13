@@ -7,13 +7,6 @@ export const RegisterContainer =styled.div`
     padding:100px;
     align-items: center;    
     
-        .input{
-            width: 250px;
-            height:35px;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
         button{
             background-color: #000; 
             border: none;

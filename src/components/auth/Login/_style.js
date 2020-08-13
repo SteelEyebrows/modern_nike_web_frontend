@@ -61,38 +61,37 @@ export const LoginModal =styled.div`
     opacity: 0;
     visibility: hidden;
     z-index: 2;
-    .logo{
-        width:100px;
-        height:auto;
-    }
-    form{
-      .input{
-        width: 250px;
-        height:35px;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-    }
-    button{
-        background-color: #000; 
-        border: none;
-        color: white;
-        width:250px;
-        height:30px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1em;
-        margin:5px;
-    }
+  }
+    
+  .loginLogo{
+      width:100px;
+      height:auto;
+  }
 
-      .signUp{
-          color:#696969;
-          font-size:0.5em;
-      }
-    }
+  .loginTiltle{
+      font-family: 'GmarketSansBold';  
+      color:black
   }
   
+
+  .loginButton{
+      background-color: #000; 
+      border: none;
+      color: white;
+      width:250px;
+      height:30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1em;
+      margin:5px;
+  }
+
+  .signUp{
+      color:#696969;
+      font-size:0.5em;
+  }
+    
   @media (min-width: 768px) {
     .content {
       max-width: 50%;

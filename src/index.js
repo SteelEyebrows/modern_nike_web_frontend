@@ -18,6 +18,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  h2{
+    font-family: 'GmarketSansBold';
+  }
 `;
 
 ReactDOM.render(

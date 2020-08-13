@@ -10,7 +10,7 @@ const NavigationContainer = ({history,match}) =>{
     //get data
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
-
+	
     //animation
     const [state, setState] = React.useState({
 		isActive1: false,
@@ -96,7 +96,8 @@ const NavigationContainer = ({history,match}) =>{
                 hoverMenu2_enter={hoverMenu2_enter}
                 hoverMenu3_enter={hoverMenu3_enter}
                 hoverMenu4_enter={hoverMenu4_enter}
-                hoverMenu5_enter={hoverMenu5_enter}
+				hoverMenu5_enter={hoverMenu5_enter}
+
             />
     
         </>

@@ -17,7 +17,7 @@ const SignupSchema = Yup.object().shape({
 const LoginContainer = ({history,match}) =>{
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [loginVisible, setLoginVisible] = useState(false);
+    const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
     const { register, handleSubmit, errors } = useForm({
         resolver: yupResolver(SignupSchema)
       });
@@ -30,7 +30,9 @@ const LoginContainer = ({history,match}) =>{
 
     const onChangeUsername = event => setUserName( event.target.value);
     const onChangePassword = event => setPassword( event.target.value);
-    const toggleLogin = () => setLoginVisible(!loginVisible);
+    const showLoginModal = () => setIsLoginModalVisible(!isLoginModalVisible);
+
+    const goToRegister=()=>history.push(`/register`);
 
     const onSubmit = () =>{
       try {
@@ -47,16 +49,15 @@ const LoginContainer = ({history,match}) =>{
                 user={data.user}
                 isAuthenticated={data.isAuthenticated}
                 postLogOut={postLogOut}
-
+                goToRegister={goToRegister}
                 onChangeUsername={onChangeUsername}
                 onChangePassword={onChangePassword}
-                toggleLogin={toggleLogin}
-                loginVisible={loginVisible}
+                showLoginModal={showLoginModal}
+                isLoginModalVisible={isLoginModalVisible}
 
                 register={register}
-                handleSubmit={handleSubmit}
+                handleSubmit={handleSubmit(onSubmit)}
                 errors={errors}
-                onSubmit={onSubmit}
             />
     
         </>

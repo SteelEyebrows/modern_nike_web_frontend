@@ -4,7 +4,7 @@ import {MainTemplate} from '../components';
 import {CsContainer,NavigationContainer} from '../containers';
         
 const Cs = () =>(
-    <MainTemplate header={<NavigationContainer/>}>
+    <MainTemplate>
         <CsContainer />
     </MainTemplate>
 );

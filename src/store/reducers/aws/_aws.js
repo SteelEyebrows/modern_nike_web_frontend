@@ -1,5 +1,6 @@
 import {
     GET_AWS,
+    POST_AWS,
     REQUEST,
     SUCCESS,
     FAILURE
@@ -8,7 +9,7 @@ import {
 
   const initialState= {
     isFatching:false,
-    cs:{}
+    cs:[]
   };
   
   
@@ -21,13 +22,29 @@ import {
           ...state,
         };
       case GET_AWS[SUCCESS]:
+        const {payload} =action;
         return {
           ...state,
+          cs:payload.data.listNIKES.items
         };
       case GET_AWS[FAILURE]:
         return {
           ...state,
         };
+
+
+      case POST_AWS[REQUEST]:
+        return {
+          ...state,
+        };
+      case POST_AWS[SUCCESS]:
+        return {
+          ...state,
+        };
+      case POST_AWS[FAILURE]:
+        return {
+          ...state,
+        };  
       default:
         return state;
     }

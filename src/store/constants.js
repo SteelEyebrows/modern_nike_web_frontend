@@ -14,6 +14,7 @@ function createRequestTypes(base){
 
 export const GET_ADAPTIVE = createRequestTypes("GET_ADAPTIVE");
 export const GET_AWS = createRequestTypes("GET_AWS");
+export const POST_AWS = createRequestTypes("POST_AWS");
 export const GET_PRODUCTS = createRequestTypes("GET_PRODUCTS");
 export const GET_DETAIL = createRequestTypes("GET_DETAIL");
 

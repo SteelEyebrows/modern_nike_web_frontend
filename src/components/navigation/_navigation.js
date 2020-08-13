@@ -15,7 +15,7 @@ const Navigaition = ({
     hoverMenu2_enter,
     hoverMenu3_enter,
     hoverMenu4_enter,
-    hoverMenu5_enter
+    hoverMenu5_enter,
 }) => {
 
 	return (

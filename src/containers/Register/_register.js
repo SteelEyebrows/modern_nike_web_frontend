@@ -3,13 +3,26 @@ import {useSelector,useDispatch} from 'react-redux';
 import { authAction } from "../../store/actions";
 import { withRouter } from "react-router-dom";
 import {Register} from '../../components/auth';
-import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import { useForm } from "react-hook-form";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers";
+
+const SignupSchema = Yup.object().shape({
+  username: Yup.string().required("Required"),
+  password: Yup.string()
+    .min(6, "Password should be longer than 6 characters")
+    .required("Required"),
+  email: Yup.string().required("Required"),  
+});
 
 const RegisterContainer = ({history,match}) =>{
     const [username, setUserName] = React.useState("");
     const [password, setPassword] = React.useState("");
     const [email, setEmail] = React.useState("");
-    
+    const { register, handleSubmit, errors } = useForm({
+      resolver: yupResolver(SignupSchema)
+    });
+
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
 
@@ -26,13 +39,25 @@ const RegisterContainer = ({history,match}) =>{
           }));
     }
 
+
+    const onSubmit = () =>{
+      try {
+          fetchRegister();
+      }catch(error) {
+          console.log(error);
+      }
+    };
     return(
         <>
             <Register
                 onChangeUsername={onChangeUsername}
                 onChangePassword={onChangePassword}
                 onChangeEmail={onChangeEmail}
-                fetchRegister={fetchRegister}
+
+                register={register}
+                handleSubmit={handleSubmit}
+                errors={errors}
+                onSubmit={onSubmit}
             />
     
         </>

@@ -2,19 +2,56 @@ import styled, { keyframes } from 'styled-components';
 
 export const UpperBody =styled.div`
     width: 100%;
-    height: 20vh;
-    display: flex;
-    background:green;
+    height: 30vh;
+    position:fixed;
+    background:#fff;
+    .LogoBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 30%;
+        background:#fff;
+        border-bottom:1px solid rgba(192,192,192,0.6);
+        img{
+            width:60px;
+            height:auto;
+        }
+    }
+    .SearchBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 70%;
+        background:#fff;
+        input{
+            width: 400px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    }
 `;
 
-export const Title =styled.div`
-    width: 20%;
-    height: 20vh;
-    background:pink;
-`;
-
-export const ButtonSet =styled.div`
-    width: 80%;
-    height: 20vh;
-    background:blue;
+export const LowerBody =styled.div`
+    margin-top: 30vh;
+    .list{
+        display: table;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        .header{
+            display: flex;
+            justify-content: space-between;
+            padding:2em;
+        }
+        li{
+            width:70vw;
+            height:auto;
+            padding: 12px 20px;
+            background:gold;
+            margin:1em;
+        }
+    }
 `;

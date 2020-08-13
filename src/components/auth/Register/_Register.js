@@ -1,9 +1,7 @@
 import * as React from "react";
 import { withRouter } from "react-router-dom";
 import {RegisterContainer} from './_style';
-import { useForm } from "react-hook-form";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers";
+import {FormInput} from '../../common';
 
 const policy=`
 제1조 (목적)
@@ -331,7 +329,11 @@ const Register = ({
     onChangeUsername,
     onChangePassword,
     onChangeEmail,
-    fetchRegister
+
+    register,
+    handleSubmit,
+    errors,
+    onSubmit,
 }) => {
 
 	return (
@@ -340,31 +342,31 @@ const Register = ({
         <h2>나이키 멤버 가입</h2>
         <p>멤버가 되어 나이키가 제공하는</p>
         <p>최고의 제품과 혜택을 만나보세요</p>
-           
-            <input
-                className="input"
-                type="text"
-                name="username"
-                placeholder="Email Address"
-                onChange={onChangeUsername}
-                required
-                /><br/>
-            <input
-                className="input"
-                type="password"
-                name="password"
-                placeholder="Password"
-                onChange={onChangePassword}
-                required
-                /><br/>
-            <input
-                className="input"
-                type="email"
-                name="email"
-                placeholder="email"
-                onChange={onChangeEmail}
-                required
-                /><br/><br/>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <FormInput 
+                cn="RegisterInputBox" 
+                type="text" 
+                name="username" 
+                register={register} 
+                errors={errors&&errors['username']}
+                changed={onChangeUsername}
+            />
+            <FormInput 
+                cn="RegisterInputBox" 
+                type="password" 
+                name="password" 
+                register={register} 
+                errors={errors&&errors['password']}
+                changed={onChangePassword}
+            />
+            <FormInput 
+                cn="RegisterInputBox" 
+                type="text" 
+                name="email" 
+                register={register} 
+                errors={errors&&errors['email']}
+                changed={onChangeEmail}
+            />
             <div className="policyBox">
                 {policy}
             </div>
@@ -374,14 +376,13 @@ const Register = ({
                     value="remember-me"
                     id="rememberMe"
                     name="rememberMe"
-                    required
+                    ref={register} 
                 />{" "}
                 [필수] 개인정보 수집,이용 동의
             </label><br/>
-            <button onClick={fetchRegister} type="submit">
-                회원가입하기 (만 14세 이상)
-            </button><br/>  
-        
+            <input type="submit" className="registerButton" data-testid="button" />
+            {/* 회원가입하기 (만 14세 이상)</input> */}
+        </form>
             </div>
     </RegisterContainer>
 	);

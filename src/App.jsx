@@ -21,12 +21,9 @@ function App() {
         AWSS3: {
             bucket: 'verdemo', //REQUIRED -  Amazon S3 bucket
             region: 'ap-northeast-2', //OPTIONAL -  Amazon service region
-        }},
-      "aws_project_region": "ap-northeast-2",
-      "aws_appsync_graphqlEndpoint": process.env.REACT_APP_AWS_GRAPHQL_ENDPOINT,
-      "aws_appsync_region": "ap-northeast-2",
-      "aws_appsync_authenticationType": process.env.REACT_APP_AWS_AUTHENTICATION_TYPE,
-      "aws_appsync_apiKey": process.env.REACT_APP_AWS_API_KEY
+        }
+    },
+    //-----------
     });
   }, []);
 
