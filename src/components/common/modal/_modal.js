@@ -1,12 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import {StyledModal} from './_style';
 import { gsap } from "gsap";
+import {useKeyPress} from '../../../lib/hoc'
 
 const Modal = ({
     content,
     show,
-    close
+    reverse,
+    esc
 }) => {
+  const pressESC = useKeyPress('Escape');
   const tl = useRef(gsap.timeline({ paused: true }));
   let modalVeil = null;
   let modalWrapper = null;
@@ -38,20 +41,24 @@ const Modal = ({
     }
   }, [show]);
 
+ 
+  useEffect(() => {
+    esc();
+  }, [show&&pressESC]);
+
   return (
     <StyledModal ref={e => (modalWrapper = e)}>
       <div className="modal-content" ref={e => (modalContent = e)}>
         {
             content
         }
-        <button className="btn btn-secondary" onClick={close}>
-          Close
+        <button className="close" onClick={reverse}>
+          <p>Close</p>
         </button>
       </div>
       <div
         className="modal-veil"
         ref={e => (modalVeil = e)}
-        onClick={close}
       />
     </StyledModal>
   );

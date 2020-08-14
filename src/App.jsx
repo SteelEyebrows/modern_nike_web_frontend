@@ -23,7 +23,7 @@ function App() {
             region: 'ap-northeast-2', //OPTIONAL -  Amazon service region
         }
     },
-    //-----------
+      //---------------------
     });
   }, []);
 

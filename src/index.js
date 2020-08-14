@@ -18,8 +18,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  h2{
+  b,h2{
     font-family: 'GmarketSansBold';
+  }
+  p{
+    font-family: 'GmarketSansLight';
   }
 `;
 

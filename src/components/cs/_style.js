@@ -36,6 +36,13 @@ export const UpperBody =styled.div`
 
 export const LowerBody =styled.div`
     margin-top: 30vh;
+    .writingButton{
+        background-color:black;
+        width:100px;
+        height:30px;
+        color: white;
+        cursor: pointer;
+    }
     .list{
         display: table;
         text-align: center;
@@ -46,12 +53,16 @@ export const LowerBody =styled.div`
             justify-content: space-between;
             padding:2em;
         }
-        li{
-            width:70vw;
-            height:auto;
-            padding: 12px 20px;
-            background:gold;
-            margin:1em;
+        ul{
+            list-style-type: none;
+            li{
+                width:70vw;
+                height:auto;
+                padding: 12px 20px;
+                margin:1em;
+                border-bottom:1px solid black;
+                cursor: pointer;
+            }
         }
     }
 `;

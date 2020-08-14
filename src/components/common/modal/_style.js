@@ -38,6 +38,12 @@ export const StyledModal =styled.div`
     z-index: 2;
   }
   
+  .close{
+    position:absolute;
+    right:0;
+    top:0;
+  }
+
   @media (min-width: 768px) {
     .my-modal-content {
       max-width: 50%;

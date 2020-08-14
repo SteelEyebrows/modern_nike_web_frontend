@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { awsAction } from "../../store/actions";
 import {Cs} from '../../components';
-import {API, graphqlOperation } from 'aws-amplify';
 import {Loading} from '../../components/common';
 import * as graphql from '../../graphql';
 import { useForm } from "react-hook-form";
@@ -30,25 +29,19 @@ const CsContainer = (props) =>{
     const getAws =(query)=>dispatch(awsAction.awsRequest(query));
     const postAws = (query) =>dispatch(awsAction.writingRequest(query));
 
-    const showPostModal = () => setIsPostModalVisible(!isPostModalVisible);
-    const showWitingModal = () => setIsWritingModalVisible(!isWritingModalVisible);
+    const reversePostModal = () => setIsPostModalVisible(!isPostModalVisible);
+    const escPostModal = () => setIsPostModalVisible(false);
+    
+    const reverseWitingModal = () => setIsWritingModalVisible(!isWritingModalVisible);
+    const escWitingModal = () => setIsWritingModalVisible(false);
 
     const onChangeTitle = event => setTitle( event.target.value);
     const onChangeInquiry = event => setInquiry( event.target.value);
-    // const postAws = async() =>{
-    //     const input_query={
-    //       title: title,
-    //       inquiry: inquiry,
-    //     };
-    //     await API.graphql(graphqlOperation(graphql.createStudent, {input: input_query})).then(r =>{
-    //         console.log(r);
-    //     });
-    // }
+
     const onSubmit = () =>{
       try {
         const input_query={title,inquiry};
-        // const user = await Auth.signIn(userName, password);console.log("rrrrrrr");
-          postAws(input_query);
+        postAws(input_query);
       }catch(error) {
           console.log(error);
       }
@@ -63,17 +56,21 @@ const CsContainer = (props) =>{
             data.isFatching?
             <Loading />:
             <Cs
-              showPostModal={showPostModal}
+              reversePostModal={reversePostModal}
+              escPostModal={escPostModal}
               isPostModalVisible={isPostModalVisible}
               
-              showWritingModal={showWitingModal}
+              reverseWritingModal={reverseWitingModal}
+              escWritingModal={escWitingModal}
               isWritingModalVisible={isWritingModalVisible}
+
               onChangeTitle={onChangeTitle}
               onChangeInquiry={onChangeInquiry}
 
               postAws={postAws}
               data={data.cs}
 
+              isAuthenticated={data.isAuthenticated}
               register={register} 
               handleSubmit={handleSubmit(onSubmit)} 
               errors={errors}
@@ -86,6 +83,7 @@ const CsContainer = (props) =>{
 const mapStateToProps = (rootReducer)=>({//reducers => case
     isFatching:rootReducer.aws.isFatching,
     cs:rootReducer.aws.cs,
+    isAuthenticated: rootReducer.auth.isAuthenticated,
 });
 
 export default CsContainer;

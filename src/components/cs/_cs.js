@@ -1,7 +1,8 @@
-import * as React from "react";
+import React,{useState,useEffect} from "react";
 import {UpperBody,LowerBody} from './_style';
 import {Modal} from '../common';
 import Writing from './writing';
+import {LoginFormContainer} from '../../containers'
 
 const Temp = ({
   title,
@@ -18,10 +19,12 @@ const Temp = ({
 
 
 const Cs = ({ 
-  showPostModal,
+  reversePostModal,
+  escPostModal,
   isPostModalVisible,
 
-  showWritingModal,
+  reverseWritingModal,
+  escWritingModal,
   isWritingModalVisible,
   onChangeTitle,
   onChangeInquiry,
@@ -29,11 +32,11 @@ const Cs = ({
   postAws,
   data,
 
+  isAuthenticated,
   register,
   handleSubmit,
   errors
 }) => {
-
   return (
     <>
         <UpperBody>
@@ -51,9 +54,9 @@ const Cs = ({
           <div className="list">
             <div className="header">
               <h2>1:1 문의하기</h2>
-              <button onClick={showWritingModal}>글쓰기</button>
+              <button className="writingButton" onClick={reverseWritingModal}>글쓰기</button>
               <Modal 
-                 content={
+                 content={ isAuthenticated?
                  <Writing 
                     onChangeTitle={onChangeTitle}
                     onChangeInquiry={onChangeInquiry}
@@ -61,21 +64,23 @@ const Cs = ({
                     handleSubmit={handleSubmit} 
                     errors={errors}
                     postAws={postAws}
-                  />} 
+                  />:<LoginFormContainer />} 
                  show={isWritingModalVisible} 
-                 close={showWritingModal}
+                 reverse={reverseWritingModal}
+                 esc={escWritingModal}
               />
             </div>
             <ul>
               {
                 data.map((one,i) => {
                   return(
-                    <li onClick={showPostModal} key={one.id}>
-                      {one.title}
+                    <li onClick={reversePostModal} key={one.id}>
+                      <p><b>Q.</b>{one.title}</p>
                       <Modal 
                           content={<Temp title={one.title} inquiry={one.inquiry} />} 
                           show={isPostModalVisible} 
-                          close={showPostModal}
+                          reverse={reversePostModal}
+                          esc={escPostModal}
                         />
                     </li>
                   )

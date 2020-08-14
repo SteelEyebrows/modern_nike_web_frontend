@@ -1,7 +1,6 @@
 import React, { useState,useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import {Lnb,LoginModal} from"./_style";
-import LoginForm from './LoginForm';
+import {LoginForm, LoginFormContainer} from '../../../containers';
 import {Modal} from '../../common';
 
 // https://codesandbox.io/s/gsap-powered-modal-bobdj?file=/src/Modal.js
@@ -14,14 +13,9 @@ const Login = ({
   postLogOut,
   goToRegister,
 
-  onChangeUsername,
-  onChangePassword,
   showLoginModal,
   isLoginModalVisible,
 
-  register,
-  handleSubmit,
-  errors,
   }) => {
 
   return (
@@ -43,14 +37,7 @@ const Login = ({
 							<div className="login" onClick={showLoginModal}>로그인</div>
            		<div><a href="#" >장바구니</a></div >
                <Modal 
-                 content={
-                 <LoginForm
-                    onChangeUsername={onChangeUsername}
-                    onChangePassword={onChangePassword}
-                    register={register} 
-                    handleSubmit={handleSubmit} 
-                    errors={errors}
-                  />} 
+                 content={<LoginFormContainer/>} 
                  show={isLoginModalVisible} 
                  close={showLoginModal}
               />   
