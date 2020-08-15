@@ -12,7 +12,7 @@ import {
     loginRequest: (data) => createAction(POST_LOGIN[REQUEST], data),
     loginSuccess: (data) => createAction(POST_LOGIN[SUCCESS], data),
     logOutRequest: (data) => createAction(POST_LOGOUT[REQUEST], data),
-
+    logOutSuccess: (data) => createAction(POST_LOGOUT[SUCCESS], data),
     registerRequest:(data) =>createAction(POST_REGISTER[REQUEST],data),
     registerSuccess:(data) =>createAction(POST_REGISTER[SUCCESS],data),
   };

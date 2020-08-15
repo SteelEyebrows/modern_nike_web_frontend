@@ -1,14 +1,40 @@
 import styled, { keyframes } from 'styled-components';
 
 export const Navbar =styled.div`
-.logo{
-    position:absolute;
-    z-index:11;
-    margin-top:15px;
-    margin-left:25px;
-    width:70px;
-    height:auto;
-}
+
+`;
+
+export const UpperMenu = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    z-index:1000;
+    height:30px;
+    right:60px;
+    border-bottom:1px solid rgba(192,192,192,0.6);
+    font-family: 'GmarketSansLight';
+    font-size:0.9em;
+    color:#696969;
+    z-index:1000;
+        .authenticated{
+            display: flex;
+            color:#696969;
+            &__logout{
+                background-color:pink;
+            }
+        }
+        .unauthenticated{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            div{
+                cursor:pointer;
+                margin:1em;
+                img{
+                    width:20px;
+                    height:auto;
+                }
+            }
+        }
 `;
 
 export const MenuContainer =styled.div`
@@ -18,6 +44,13 @@ export const MenuContainer =styled.div`
     width: 100vw;
     height:60px;
     text-align: center;
+    .logo{
+        position:absolute;
+        left:20px;
+        width:70px;
+        height:auto;
+        z-index:10;
+    }
 `;
 
 export const Menu =styled.div`
@@ -49,7 +82,7 @@ export const MenuComp =styled.li`
 
 export const SubMenu =styled.div`
     position: absolute;
-    top:0;
+    top:30px;
     left:0;
     z-index:7;
     opacity: 0;

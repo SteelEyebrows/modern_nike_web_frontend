@@ -26,6 +26,7 @@ const Cs = ({
   reverseWritingModal,
   escWritingModal,
   isWritingModalVisible,
+  
   onChangeTitle,
   onChangeInquiry,
 

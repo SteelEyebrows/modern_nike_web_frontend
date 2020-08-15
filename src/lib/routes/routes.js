@@ -1,4 +1,4 @@
-import {Login,Cs,Home,Products,Detail,Register} from '../../page';
+import {Login,Cs,Home,Products,Detail,Register,Cart} from '../../page';
 
 
 export const routes =[
@@ -28,6 +28,11 @@ export const routes =[
     {
         path: "/register",
         page: Register,
+        exact: true
+    },
+    {
+        path: "/cart",
+        page: Cart,
         exact: true
     },
 ]

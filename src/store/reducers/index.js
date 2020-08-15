@@ -5,6 +5,7 @@ import awsReducer from './aws';
 import productsReducer from './products';
 import detailReducer from './detail';
 import authReducer from './auth';
+import cartReducer from './cart';
 
 
 export const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ export const rootReducer = combineReducers({
     aws:awsReducer,
     products:productsReducer,
     detail:detailReducer,
-    auth:authReducer
+    auth:authReducer,
+    cart:cartReducer,
   });
 

@@ -1,9 +1,5 @@
 import {API, graphqlOperation } from 'aws-amplify';
 import * as graphql from '../../graphql';
-// export const getAws = async(query) =>{
-//   await API.graphql(graphqlOperation(query))
-//      .then(data => data);
-//    };
 
 export const getAws = (query) => 
   API.graphql(graphqlOperation(query));

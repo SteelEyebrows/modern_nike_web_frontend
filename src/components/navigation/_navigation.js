@@ -1,13 +1,12 @@
 import React, { StatelessComponent,useState } from 'react';
-import {Navbar,MenuContainer,Lnb,Menu,MenuComp,SubMenu} from './_style';
-import {LoginContainer} from '../../containers'
+import {Navbar,MenuContainer,UpperMenu,Menu,MenuComp,SubMenu} from './_style';
+import {LoginFormContainer} from '../../containers'
+import {Modal} from '../common'
 
 // https://codepen.io/jonathan/pen/QOrjJj
 // https://webdesign.tutsplus.com/tutorials/how-to-build-a-mega-menu-with-flexbox--cms-33540
 
-
 const Navigaition = ({ 
-
 	state,
 	onMouseEnterHandler,
     onMouseLeaveHandler,
@@ -15,14 +14,46 @@ const Navigaition = ({
     hoverMenu2_enter,
     hoverMenu3_enter,
     hoverMenu4_enter,
-    hoverMenu5_enter,
+	hoverMenu5_enter,
+	
+	goToRegister,
+	postLogOut,
+	isAuthenticated,
+	reverseLoginModal,
+    escLoginModal,
+    isLoginModalVisible,
 }) => {
 
 	return (
 		<Navbar>
-			<img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} alt="logo" className="logo" />
-			<LoginContainer />
+			
+			<UpperMenu>
+      			{
+				isAuthenticated?
+				<div className="authenticated">
+					<div>님 반갑습니다!</div>
+					<div onClick={postLogOut} className="authenticated__logout">
+						logout
+					</div>
+            	</div>
+            
+            :
+
+				<div className="unauthenticated">
+              		<div className="register" onClick={goToRegister}>회원가입</div>/
+					<div className="login" onClick={reverseLoginModal}>로그인</div>
+					<Modal 
+						content={<LoginFormContainer/>} 
+						show={isLoginModalVisible} 
+						reverse={reverseLoginModal}
+						esc={escLoginModal}
+					/>   
+				</div>
+			}
+			<div className="cart" ><img src="cart.svg" alt="cart"/></div>
+    		</UpperMenu>
 			<MenuContainer>
+			<img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} alt="logo" className="logo" />
 				<div onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler} >
 					<Menu className="menu">
 						<ul>

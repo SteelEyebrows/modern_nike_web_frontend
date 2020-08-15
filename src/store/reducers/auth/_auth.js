@@ -3,7 +3,8 @@ import {
     POST_LOGOUT,
     POST_REGISTER,
     REQUEST,
-    SUCCESS
+    SUCCESS,
+    FAILURE
   } from "../../constants";
 
   
@@ -29,13 +30,25 @@ import {
             isAuthenticated: true,
             user:payload
             };
+      case POST_LOGIN[FAILURE]:
+            return {
+            ...state,
+            };
 
       case POST_LOGOUT[REQUEST]:
+            return {
+              ...state,
+            };
+      case POST_LOGOUT[SUCCESS]:
             return {
               ...state,
               isAuthenticated: false,
               user:{}
             };
+      case POST_LOGOUT[FAILURE]:
+            return {
+              ...state,
+            };      
 
       case POST_REGISTER[REQUEST]:
             return {
@@ -44,7 +57,11 @@ import {
       case POST_REGISTER[SUCCESS]:
             return {
               ...state,
-            };                  
+            };       
+      case POST_REGISTER[FAILURE]:
+            return {
+              ...state,
+            };                        
       default:
         return state;
     }

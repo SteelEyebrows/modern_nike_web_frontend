@@ -12,6 +12,9 @@ function createRequestTypes(base){
     )
 }
 
+export const ADD_CART = createRequestTypes("ADD_CART");
+export const DELETE_CART = createRequestTypes("DELETE_CART");
+
 export const GET_ADAPTIVE = createRequestTypes("GET_ADAPTIVE");
 export const GET_AWS = createRequestTypes("GET_AWS");
 export const POST_AWS = createRequestTypes("POST_AWS");

@@ -1,18 +1,25 @@
-import * as React from 'react';
+import React,{useState,useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { authAction } from "../../store/actions";
 import { withRouter } from "react-router-dom";
 import {Navigation} from '../../components';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import storage from '../../lib/storage';
 
 const NavigationContainer = ({history,match}) =>{
-    
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+	const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
+	const reverseLoginModal = () => setIsLoginModalVisible(!isLoginModalVisible);
+    const escLoginModal = () => setIsLoginModalVisible(false);
+	
     //get data
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
-	
-    //animation
-    const [state, setState] = React.useState({
+	const postLogOut =()=>dispatch(authAction.logOutRequest());
+	const goToRegister=()=>history.push(`/register`);
+   
+	//animation
+    const [state, setState] = useState({
 		isActive1: false,
 		isActive2: false,
 		isActive3: false,
@@ -86,6 +93,14 @@ const NavigationContainer = ({history,match}) =>{
 			isActive5: true });
 	  };
 
+	  useEffect(
+		() => {
+			const userData = storage.get('AUTH');
+			if (userData!=="undefined") setIsAuthenticated(true);
+			else setIsAuthenticated(false);
+		},
+		[data.user],
+    );
     return(
         <>
             <Navigation 
@@ -97,7 +112,14 @@ const NavigationContainer = ({history,match}) =>{
                 hoverMenu3_enter={hoverMenu3_enter}
                 hoverMenu4_enter={hoverMenu4_enter}
 				hoverMenu5_enter={hoverMenu5_enter}
+				
+				goToRegister={goToRegister}
+				postLogOut={postLogOut}
+				isAuthenticated={isAuthenticated}
 
+				reverseLoginModal={reverseLoginModal}
+                escLoginModal={escLoginModal}
+                isLoginModalVisible={isLoginModalVisible}
             />
     
         </>
@@ -105,6 +127,7 @@ const NavigationContainer = ({history,match}) =>{
   }
 
 const mapStateToProps = (rootReducer)=>({//reducers => case
+	user: rootReducer.auth.user,
 
 });
 

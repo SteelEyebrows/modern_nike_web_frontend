@@ -12,7 +12,8 @@ const Detail = ({
     color,
     clickColorSelector,
     onChangeQuantity,
-    onChangeSize
+    onChangeSize,
+    addCart
 }) => {
     const allSizes=["240","245","250","255","260","265","270","275","280","285","290","295","300","305","310"];
     
@@ -107,8 +108,8 @@ const Detail = ({
                     }>+</div>
                 </div>
             </div>
-            <Button>buy now</Button>
-
+            <Button>바로구매</Button>
+            <Button onClick={addCart}>장바구니</Button>
         </div>
     </DetailContainer>
     </>

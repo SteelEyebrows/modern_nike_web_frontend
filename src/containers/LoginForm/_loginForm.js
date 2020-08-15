@@ -2,7 +2,7 @@ import React, { useState, } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { authAction } from "../../store/actions";
 import { withRouter } from "react-router-dom";
-import LoginForm from '../../components/auth/Login/LoginForm';
+import LoginForm from '../../components/auth/LoginForm';
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers";

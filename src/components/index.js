@@ -4,3 +4,4 @@ export {default as Navigation} from './navigation';
 export {default as Products} from './products';
 export {MainTemplate} from './template';
 export {default as Detail} from './detail';
+export {default as Cart} from './Cart';
