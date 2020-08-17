@@ -1,7 +1,7 @@
 import React from 'react'
-import Login from '../components/auth/Login'
-import LoginForm from '../components/auth/Login/LoginForm';
-import Modal from '../components/common';
+import Login from '../components/Auth/Login'
+import LoginForm from '../components/Auth/Login/LoginForm';
+import Modal from '../components/Common';
 import { render, fireEvent } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
 import {mount,shallow} from 'enzyme';

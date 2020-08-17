@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import {Products} from '../../components';
 import useIntersection from 'react-use/lib/useIntersection';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
-import {Loading} from '../../components/common';
+import {Loading} from '../../components/Common';
 
 const ProductContainer = ({history,match}) =>{
 
@@ -14,11 +14,11 @@ const ProductContainer = ({history,match}) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
 
-    const getProducts =()=>dispatch(productsAction.productsRequest());
+    const getProducts =(sex)=>dispatch(productsAction.productsRequest(sex));
     const resetDetail =()=>dispatch(detailAction.detailSuccess({}));
 
     React.useEffect(() => {
-        getProducts();
+        getProducts(match.params.direction);
         resetDetail();
     },[]);
 
@@ -68,6 +68,7 @@ const ProductContainer = ({history,match}) =>{
             data.isFatching?
             <Loading />:
             <Products 
+                banner={data.banner}
                 list={data.list}
                 trigger={trigger}
                 paginate={paginate}
@@ -81,7 +82,8 @@ const ProductContainer = ({history,match}) =>{
   }
 
 const mapStateToProps = (rootReducer)=>({//reducers => case
-    list:rootReducer.products.list,
+    banner:rootReducer.products.banner,
+    list:rootReducer.products.list
 });
 
 export default withRouter(ProductContainer);

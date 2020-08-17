@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormInput} from '../../common';
+import {FormInput} from '../../Common';
 
 const Writing = ({
     onChangeTitle,

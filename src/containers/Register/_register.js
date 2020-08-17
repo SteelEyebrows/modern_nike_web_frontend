@@ -2,7 +2,7 @@ import * as React from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { authAction } from "../../store/actions";
 import { withRouter } from "react-router-dom";
-import {Register} from '../../components/auth';
+import {Register} from '../../components/Auth';
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers";

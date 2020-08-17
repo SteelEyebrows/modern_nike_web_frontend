@@ -1,9 +1,24 @@
 import styled, { keyframes } from 'styled-components';
 
+export const Banner =styled.div`
+    margin-bottom:3em;
+    text-align: center;
+    h2{
+        font-size:3em;
+    }
+    p{
+        margin:auto;
+        width:50%;
+    }
+    img{
+        width:100vw;
+        height:auto;
+    }
+`;
+
 export const ProductList =styled.div`
     display: grid;
 	padding: 1rem;
-	background: #ededed;
 
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(3, 1fr);
@@ -22,7 +37,6 @@ export const ProductList =styled.div`
 		height: min-content;
 		overflow: hidden;
 		transition: 0.3s;
-        background:green;
         .colors{
             font-family: 'GmarketSansLight';
         }
@@ -35,13 +49,11 @@ export const ProductList =styled.div`
         .name{
             width:60%;
             height:50px;
-            background:red;
             font-family: 'GmarketSansBold';
         }
         .price{
             width:40%;
             height:50px;
-            background:pink;
             font-family: 'GmarketSansLight';
         }
     }

@@ -11,7 +11,7 @@ import { call, put, takeEvery } from "redux-saga/effects";
 export function* fetchAdaptive({ payload }) {
   try {
     const { data } = yield call(Adatptive.getAdatptive,"index.json");
-    yield put(adaptiveAction.adaptiveSuccess(data.images[payload]));
+    yield put(adaptiveAction.adaptiveSuccess(data.images.first[payload]));
 }
   catch(error) {
     yield put(adaptiveAction.adaptiveFailure(error));

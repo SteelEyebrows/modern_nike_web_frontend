@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useInterval } from "./_auto";
 import {Container,SlideInner,Inner,Image} from './_style';
-import Slime from '../slime';
+import Slime from '../Slime';
 
 const Slider = ({ height, datalist, auto, speed }) => {
   const ref = useRef();

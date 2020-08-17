@@ -4,7 +4,7 @@ export const StyledModal =styled.div`
 
     opacity: 0;
     visibility: hidden;
-    position: fixed;
+    position: absolute;
     z-index: 10000;
     top: 0;
     left: 0;
@@ -40,8 +40,16 @@ export const StyledModal =styled.div`
   
   .close{
     position:absolute;
-    right:0;
-    top:0;
+    right:10px;
+    top:10px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor:pointer;
+    img{
+      width:30px;
+      height:30px;
+    }
   }
 
   @media (min-width: 768px) {

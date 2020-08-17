@@ -7,6 +7,7 @@ import {
   import _ from "underscore";
 
   const initialState= {
+    banner:"",
     list:[]
   };
   
@@ -21,6 +22,7 @@ import {
         const {payload} =action;
         return {
           ...state,
+          banner:payload.banner,
           list:payload.list
         };
       case GET_PRODUCTS[FAILURE]:

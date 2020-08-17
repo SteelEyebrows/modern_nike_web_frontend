@@ -54,7 +54,6 @@ export const LowerBody =styled.div`
             padding:2em;
         }
         ul{
-            list-style-type: none;
             li{
                 width:70vw;
                 height:auto;

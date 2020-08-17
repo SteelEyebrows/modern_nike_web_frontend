@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import {UpperBody,LowerBody} from './_style';
-import {Modal} from '../common';
-import Writing from './writing';
+import {Modal} from '../Common';
+import Writing from './Writing';
 import {LoginFormContainer} from '../../containers'
 
 const Temp = ({

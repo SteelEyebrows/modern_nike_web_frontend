@@ -7,6 +7,7 @@ export const Navbar =styled.div`
 export const UpperMenu = styled.div`
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     z-index:1000;
     height:30px;
     right:60px;
@@ -24,16 +25,14 @@ export const UpperMenu = styled.div`
         }
         .unauthenticated{
             display: flex;
-            justify-content: center;
-            align-items: center;
             div{
                 cursor:pointer;
-                margin:1em;
-                img{
-                    width:20px;
-                    height:auto;
-                }
+
             }
+        }
+        .cart{
+            width:20px;
+            margin:1em;
         }
 `;
 
@@ -96,7 +95,6 @@ export const SubMenu =styled.div`
     color:black;
     ul{
         padding-left:0px;
-        list-style-type: none;
         text-decoration: none;
 
         li{

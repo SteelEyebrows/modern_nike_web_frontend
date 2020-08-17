@@ -1,11 +1,12 @@
 import * as React from "react";
 import { withRouter } from "react-router-dom";
-import {ProductList} from './_style';
-import Pagination from './pagination';
+import {Banner,ProductList} from './_style';
+import Pagination from './Pagination';
 
 
 
 const Products = ({
+	banner,
 	list,
 	trigger,
 	paginate,
@@ -16,37 +17,11 @@ const Products = ({
 	
 	return (
     <>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
+		<Banner>
+			<img src={banner.img} alt="banner"/>
+			<h2>{banner.title}</h2>
+			<p>{banner.desc}</p>
+		</Banner>
 		<ProductList ref={trigger}>
 			{
 				currentPost.map((item)=>{

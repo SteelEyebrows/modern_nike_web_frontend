@@ -1,19 +1,20 @@
-import * as React from 'react';
+import React,{useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { adaptiveAction } from "../../store/actions";
 import {Home} from '../../components';
-import {Loading} from '../../components/common';
+import {Loading} from '../../components/Common';
 import { useNetworkStatus } from 'react-adaptive-hooks/network';
 
 
-const HomeContainer = (props) =>{
+const HomeContainer = ({history,match}) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
     const { effectiveConnectionType } = useNetworkStatus();
 
-    const getAdaptive =(effectiveConnectionType)=>dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
+    const getAdaptive =(effectiveConnectionType)=>
+        dispatch(adaptiveAction.adaptiveRequest(effectiveConnectionType));
 
-    React.useEffect(() => {
+    useEffect(() => {
         getAdaptive(effectiveConnectionType);
     },[]);
     
@@ -24,7 +25,10 @@ const HomeContainer = (props) =>{
             data.isFatching?
             <Loading />
             :
-            <Home images={data.images} />
+            <Home 
+                images={data.images} 
+                history={history}
+            />
         } 
         </>
     );

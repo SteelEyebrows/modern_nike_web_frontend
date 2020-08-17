@@ -16,15 +16,13 @@ const NavigationContainer = ({history,match}) =>{
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
 	const postLogOut =()=>dispatch(authAction.logOutRequest());
-	const goToRegister=()=>history.push(`/register`);
+
    
 	//animation
     const [state, setState] = useState({
 		isActive1: false,
 		isActive2: false,
 		isActive3: false,
-		isActive4: false,
-		isActive5: false,
 	  });
     const onMouseEnterHandler = () => {
 		let tl = new TimelineMax({paused:true});
@@ -47,8 +45,6 @@ const NavigationContainer = ({history,match}) =>{
 			isActive1: false,
 			isActive2: false,
 			isActive3: false,
-			isActive4: false,
-			isActive5: false 
 		});
 	  };
 
@@ -57,41 +53,23 @@ const NavigationContainer = ({history,match}) =>{
 			isActive1: true,
 			isActive2: false,
 			isActive3: false,
-			isActive4: false,
-			isActive5: false });
+		});
 	  };
 	const hoverMenu2_enter = () => {
 		setState({ 
 			isActive1: false,
 			isActive2: true,
 			isActive3: false,
-			isActive4: false,
-			isActive5: false });
+		});
 	  };
 	const hoverMenu3_enter = () => {
 		setState({ 
 			isActive1: false,
 			isActive2: false,
-			isActive3: true,
-			isActive4: false,
-			isActive5: false });
+			isActive3: true,		
+		});
 	  };
-	const hoverMenu4_enter = () => {
-		setState({ 
-			isActive1: false,
-			isActive2: false,
-			isActive3: false,
-			isActive4: true,
-			isActive5: false });
-	  };
-	const hoverMenu5_enter = () => {
-		setState({ 
-			isActive1: false,
-			isActive2: false,
-			isActive3: false,
-			isActive4: false,
-			isActive5: true });
-	  };
+	
 
 	  useEffect(
 		() => {
@@ -104,16 +82,14 @@ const NavigationContainer = ({history,match}) =>{
     return(
         <>
             <Navigation 
-                state={state}
+				state={state}
+				history={history}
                 onMouseEnterHandler={onMouseEnterHandler}
                 onMouseLeaveHandler={onMouseLeaveHandler}
                 hoverMenu1_enter={hoverMenu1_enter}
                 hoverMenu2_enter={hoverMenu2_enter}
                 hoverMenu3_enter={hoverMenu3_enter}
-                hoverMenu4_enter={hoverMenu4_enter}
-				hoverMenu5_enter={hoverMenu5_enter}
-				
-				goToRegister={goToRegister}
+
 				postLogOut={postLogOut}
 				isAuthenticated={isAuthenticated}
 

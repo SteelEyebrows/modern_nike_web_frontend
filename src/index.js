@@ -24,6 +24,9 @@ const GlobalStyle = createGlobalStyle`
   p{
     font-family: 'GmarketSansLight';
   }
+  ul {
+    list-style-type: none;
+}
 `;
 
 ReactDOM.render(

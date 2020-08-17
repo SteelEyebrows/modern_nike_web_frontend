@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { awsAction } from "../../store/actions";
 import {Cs} from '../../components';
-import {Loading} from '../../components/common';
+import {Loading} from '../../components/Common';
 import * as graphql from '../../graphql';
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";

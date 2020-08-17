@@ -1,7 +1,7 @@
 import * as React from "react";
 import { withRouter } from "react-router-dom";
 import {RegisterContainer} from './_style';
-import {FormInput} from '../../common';
+import {FormInput} from '../../Common';
 
 const policy=`
 제1조 (목적)

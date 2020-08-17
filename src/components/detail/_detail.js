@@ -3,7 +3,7 @@ import useIntersection from 'react-use/lib/useIntersection';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
 import { withRouter } from "react-router-dom";
 import {DetailContainer} from'./_style';
-import {Button} from '../common';
+import {Button} from '../Common';
 
 const Detail = ({
     item,

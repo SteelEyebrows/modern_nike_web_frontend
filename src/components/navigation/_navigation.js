@@ -1,22 +1,20 @@
 import React, { StatelessComponent,useState } from 'react';
 import {Navbar,MenuContainer,UpperMenu,Menu,MenuComp,SubMenu} from './_style';
 import {LoginFormContainer} from '../../containers'
-import {Modal} from '../common'
+import {Modal} from '../Common'
 
 // https://codepen.io/jonathan/pen/QOrjJj
 // https://webdesign.tutsplus.com/tutorials/how-to-build-a-mega-menu-with-flexbox--cms-33540
 
 const Navigaition = ({ 
 	state,
+	history,
 	onMouseEnterHandler,
     onMouseLeaveHandler,
     hoverMenu1_enter,
     hoverMenu2_enter,
     hoverMenu3_enter,
-    hoverMenu4_enter,
-	hoverMenu5_enter,
-	
-	goToRegister,
+
 	postLogOut,
 	isAuthenticated,
 	reverseLoginModal,
@@ -26,51 +24,76 @@ const Navigaition = ({
 
 	return (
 		<Navbar>
-			
 			<UpperMenu>
-      			{
-				isAuthenticated?
-				<div className="authenticated">
-					<div>님 반갑습니다!</div>
-					<div onClick={postLogOut} className="authenticated__logout">
-						logout
-					</div>
-            	</div>
-            
-            :
-
-				<div className="unauthenticated">
-              		<div className="register" onClick={goToRegister}>회원가입</div>/
-					<div className="login" onClick={reverseLoginModal}>로그인</div>
-					<Modal 
-						content={<LoginFormContainer/>} 
-						show={isLoginModalVisible} 
-						reverse={reverseLoginModal}
-						esc={escLoginModal}
-					/>   
+				<div 
+					onClick={()=>history.push(`/cs`)} 
+					className="cs" 
+				>
+						고객센터
 				</div>
-			}
-			<div className="cart" ><img src="cart.svg" alt="cart"/></div>
+				<div onClick={()=>history.push(`/cart`)} 
+					className="cart" >
+						<img
+							className="cart"
+							src="https://image.flaticon.com/icons/png/512/263/263142.png" 
+							alt="cart"
+						/>
+				</div>
+      			{
+					isAuthenticated?
+					<div className="authenticated">
+						<div>님 반갑습니다!</div>
+						<div onClick={postLogOut} className="authenticated__logout">
+							logout
+						</div>
+					</div>
+            
+            	:
+
+					<div className="unauthenticated">
+						<div className="register" onClick={()=>history.push(`/register`)}>회원가입</div>/
+						<div className="login" onClick={reverseLoginModal}>로그인</div>
+						<Modal 
+							content={<LoginFormContainer/>} 
+							show={isLoginModalVisible} 
+							reverse={reverseLoginModal}
+							esc={escLoginModal}
+						/>   
+					</div>
+				}
     		</UpperMenu>
 			<MenuContainer>
-			<img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} alt="logo" className="logo" />
-				<div onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler} >
+			<img 
+				src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} 
+				alt="logo" 
+				className="logo" 
+			/>
+				<div 
+					onMouseEnter={onMouseEnterHandler} 
+					onMouseLeave={onMouseLeaveHandler} 
+				>
 					<Menu className="menu">
 						<ul>
-						<MenuComp onMouseEnter={hoverMenu1_enter} className={state.isActive1 ? "active" : ""} >
-							<a href="#" >Company</a>
+						<MenuComp 
+							onClick={()=>history.push(`/home`)} 
+							onMouseEnter={hoverMenu1_enter} 
+							className={state.isActive1 ? "active" : ""} 
+						>
+							<a href="/cs" >Company</a>
 						</MenuComp>
-						<MenuComp onMouseEnter={hoverMenu2_enter} className={state.isActive2 ? "active" : ""}>
+						<MenuComp 
+							onClick={()=>history.push(`/products/men`)} 
+							onMouseEnter={hoverMenu2_enter} 
+							className={state.isActive2 ? "active" : ""}
+						>
 							<a href="#" >MEN</a>
 						</MenuComp>
-						<MenuComp onMouseEnter={hoverMenu3_enter} className={state.isActive3 ? "active" : ""}>
+						<MenuComp 
+							onClick={()=>history.push(`/products/women`)}  
+							onMouseEnter={hoverMenu3_enter} 
+							className={state.isActive3 ? "active" : ""}
+						>
 							<a href="#" >WOMEN</a>
-						</MenuComp>
-						<MenuComp onMouseEnter={hoverMenu4_enter} className={state.isActive4 ? "active" : ""}>
-							<a href="#" >KIDS</a>
-						</MenuComp>
-						<MenuComp onMouseEnter={hoverMenu5_enter} className={state.isActive5 ? "active" : ""}>
-							<a href="#" >CS</a>
 						</MenuComp>
 						</ul>
 					</Menu>
@@ -96,17 +119,6 @@ const Navigaition = ({
 							<li><a href="#">Accessories</a></li>
 							<li><a href="#">Equipment</a></li>
 							<li><a href="#">Jordan</a></li>
-						</ul>
-						<ul onMouseEnter={hoverMenu4_enter} className="menu-list">
-							<li><a href="#">Shoes</a></li>
-							<li><a href="#">Clothing</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">Equipment</a></li>
-							<li><a href="#">Jordan</a></li>
-						</ul>
-						<ul onMouseEnter={hoverMenu5_enter} className="menu-list">
-							<li><a href="#">FnQ</a></li>
-							<li><a href="#">Contact us</a></li>
 						</ul>
 					</SubMenu>
 				</div>

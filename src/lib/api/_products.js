@@ -1,10 +1,14 @@
 import client from "../client";
 
 
-export const getProducts = (id) =>
+export const getMenProducts = (id) =>
     client.get(`products/men/${id}`);
-    
+
+export const getWomenProducts = (id) =>
+    client.get(`products/women/${id}`);
+        
     
 export default {
-    getProducts
+    getMenProducts,
+    getWomenProducts
 };

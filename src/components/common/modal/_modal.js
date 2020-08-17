@@ -53,7 +53,7 @@ const Modal = ({
             content
         }
         <button className="close" onClick={reverse}>
-          <p>Close</p>
+          <img src="https://cdn.onlinewebfonts.com/svg/img_293861.png" alt="close"/>
         </button>
       </div>
       <div

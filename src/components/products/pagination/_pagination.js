@@ -14,7 +14,7 @@ const Pagination = ({postPerPage,totalPosts,paginate}) =>{
                 {
                     pageNumbers.map(num=>(
                         <li key={num}>
-                            <a onClick={()=>paginate(num)}>{num}</a>
+                            <button className="pageNav" onClick={()=>paginate(num)}>{num}</button>
                         </li>
                     ))
                 }

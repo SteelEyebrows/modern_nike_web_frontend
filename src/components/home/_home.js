@@ -1,45 +1,16 @@
 import * as React from "react";
-import Slime from './slime/_slime';
-import Navigation from '../navigation';
+import Slime from './Slime/_slime';
 import {SectionSet,SectionOne,SectionTwo,NextButton,SlideInner,Image,Inner} from './_style';
 import { withRouter } from "react-router-dom";
-import Slider from './slider';
+import Rotate from './Rotate';
+import Slider from './Slider';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
 
-const datalist=[
-  {
-    title:"OFF WHITE",
-    desc:"description",
-    gradation:"linear-gradient(#33ccff, #ff9900)",
-    image:"https://i.pinimg.com/originals/fc/c7/10/fcc71020a8c438b5dd33cf6a884586d2.png"
-  },
-  {
-    title:"OFF WHITE",
-    desc:"description",
-    gradation:"linear-gradient(#33ccff, #ff9900)",
-    image:"https://cdn.shopify.com/s/files/1/2358/2817/products/Wethenew-Sneakers-France-Air-Force-1-Off-White-Volt-1_2000x.png?v=1545054586"
-  },
-  {
-    title:"OFF WHITE",
-    desc:"description",
-    gradation:"linear-gradient(#33ccff, #ff9900)",
-    image:"https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/j/aj4585_101_8e_1.png"
-  },
-  {
-    title:"OFF WHITE",
-    desc:"description",
-    gradation:"linear-gradient(#33ccff, #ff9900)",
-    image:"https://images.restocks.eu/products/CT0856-600/nike-dunk-low-off-white-university-red-2-1000.png"
-  },
-  {
-    title:"OFF WHITE",
-    desc:"description",
-    gradation:"linear-gradient(#33ccff, #ff9900)",
-    image:"https://www.stadiumgoods.com/cdn-cgi/image/fit%3Dcontain%2Cformat%3Dauto%2Cwidth%3D720/media/catalog/product/a/a/aa3832_700_1.png"
-  },
-]
 
-const Home = ({ images }) => {
+const Home = ({ 
+  images,
+  history 
+}) => {
 
 	const nextSlide=()=>{
 		var tl = new TimelineMax()
@@ -55,10 +26,63 @@ const Home = ({ images }) => {
     <SectionSet className="set">			 
           <SectionOne>
             <div>
-              <Slime image={images[0]&&images[0].url} position="absolute" right={-5} top={-5} size={40} typenumber={1}  title={"Animating"} disc={"Animating"} hover={true}/>
-              <Slime image={images[1]&&images[1].url} position="absolute" left={-1} top={20} size={20} typenumber={2} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(15, 96, 158, 0)"} title={"Animating"} disc={"Animating"} hover={true}/>
-              <Slime image={images[1]&&images[1].url} position="absolute" right={40} bottom={20} size={10} typenumber={4} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(218, 146, 37, 0)"} title={"Animating"} disc={"Animating"} hover={true}/>
-              <Slime image={images[1]&&images[1].url} position="absolute" left={20} bottom={2} size={25} typenumber={3} before={"rgba(255, 255, 255, 0.8)"} after={"rgba(218, 146, 37, 0)"} title={"Animating"} disc={"Animating"} hover={true}/>
+              <Rotate/>
+              <Slime 
+                image={images[1]&&images[1].img} 
+                position="absolute" 
+                right={-5} 
+                top={-5} 
+                size={40} 
+                typenumber={1}  
+                before={"rgba(0, 0, 0, 0.8)"} 
+                after={"rgba(255, 255, 255, 0.8)"} 
+                title={images[1].title} 
+                desc={images[1].desc} 
+                onClick={()=>history.push(images[1].link)}
+                hover={true}
+              />
+              <Slime 
+                image={images[2]&&images[2].img} 
+                position="absolute" 
+                left={-1} 
+                top={20} 
+                size={20} 
+                typenumber={2} 
+                before={"rgba(0, 0, 0, 0.8)"} 
+                after={"rgba(255, 255, 255, 0.8)"}  
+                title={images[2].title} 
+                desc={images[2].desc} 
+                onClick={()=>history.push(images[2].link)}
+                hover={true}
+              />
+              <Slime 
+                image={images[3]&&images[3].img} 
+                position="absolute" 
+                right={37} 
+                bottom={17} 
+                size={13} 
+                typenumber={4} 
+                before={"rgba(0, 0, 0, 0.8)"} 
+                after={"rgba(255, 255, 255, 0.8)"}  
+                title={images[3].title} 
+                desc={images[3].desc} 
+                onClick={()=>history.push(images[3].link)}
+                hover={true}
+              />
+              <Slime 
+                image={images[0]&&images[0].img} 
+                position="absolute" 
+                left={20} 
+                bottom={2} 
+                size={25} 
+                typenumber={3} 
+                before={"rgba(0, 0, 0, 0.8)"} 
+                after={"rgba(255, 255, 255, 0.8)"}  
+                title={images[0].title} 
+                desc={images[0].desc} 
+                onClick={()=>history.push(images[0].link)}
+                hover={true}
+              />
             </div>
               <NextButton> 
                 <a href="#">
@@ -72,9 +96,9 @@ const Home = ({ images }) => {
           </SectionOne>
 
 					<SectionTwo>
-            <Slider datalist={datalist} height="300px" auto speed={3000}>
+            {/* <Slider datalist={images.second} height="300px" auto speed={3000}>
               
-            </Slider>
+            </Slider> */}
 					</SectionTwo>
 			</SectionSet>
 		</>

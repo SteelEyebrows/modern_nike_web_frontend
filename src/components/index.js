@@ -1,7 +1,7 @@
-export {default as Home} from './home';
-export {default as Cs} from './cs';
-export {default as Navigation} from './navigation';
-export {default as Products} from './products';
-export {MainTemplate} from './template';
-export {default as Detail} from './detail';
+export {default as Home} from './Home';
+export {default as Cs} from './Cs';
+export {default as Navigation} from './Navigation';
+export {default as Products} from './Products';
+export {MainTemplate} from './Template';
+export {default as Detail} from './Detail';
 export {default as Cart} from './Cart';
