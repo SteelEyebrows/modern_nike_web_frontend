@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React,{useState,useEffect} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { detailAction,cartAction } from "../../store/actions";
 import {Detail} from '../../components';
@@ -7,8 +7,8 @@ import {Loading} from '../../components/Common';
 import storage from '../../lib/storage';
 
 const DetailContainer = ({history,match}) =>{
-    const [ quantity, setQuantity ] = React.useState(1);
-    const [ size, setSize ] = React.useState("");
+    const [ quantity, setQuantity ] = useState(1);
+    const [ size, setSize ] = useState("");
     const productID = match.params.id;
     const productColor = match.params.color;
 
@@ -20,8 +20,8 @@ const DetailContainer = ({history,match}) =>{
         if(size!==""){
             const name = data.detail.name;
             const price = data.detail.price;
-
-            const payload = {name,price,productColor,quantity,size};
+            const thumnail = data.detail.colors[productColor].images[0];
+            const payload = {name,price,thumnail,productColor,quantity,size};
             dispatch(cartAction.addCartRequest(payload));
         }else{
             alert('사이즈를 선택해주세요');
@@ -33,8 +33,8 @@ const DetailContainer = ({history,match}) =>{
 
 
     const clickColorSelector =(color)=> history.push(`/detail/${match.params.id}/${color}`);
-    React.useEffect(() => {
-        // storage.remove("CART")
+    useEffect(() => {
+        // storage.remove("CART");
         getDetail(productID);
     },[]);
 

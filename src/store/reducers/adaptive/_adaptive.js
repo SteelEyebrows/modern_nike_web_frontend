@@ -8,7 +8,8 @@ import {
 
   const initialState= {
     isFatching:true,
-    images:{}
+    first:[],
+    second:[]
   };
   
   export default function (state = initialState, action){
@@ -20,9 +21,11 @@ import {
         };
       case GET_ADAPTIVE[SUCCESS]:
         const {payload} =action;
+
         return {
           ...state,
-          images:payload,
+          first:payload.first,
+          second:payload.second,
           isFatching:false
         };
       case GET_ADAPTIVE[FAILURE]:

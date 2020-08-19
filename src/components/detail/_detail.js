@@ -99,13 +99,13 @@ const Detail = ({
             </div>
             <div className="quantity">
                 <div className="quantity__controller">
-                    <div onClick={() =>
+                    <button onClick={() =>
                         quantity > 1 ? onChangeQuantity(quantity - 1) : ""
-                    }>-</div>
-                    {quantity}
-                    <div onClick={() =>
+                    }>-</button>
+                    <p>{quantity}</p>
+                    <button onClick={() =>
                         onChangeQuantity(quantity + 1)
-                    }>+</div>
+                    }>+</button>
                 </div>
             </div>
             <Button>바로구매</Button>

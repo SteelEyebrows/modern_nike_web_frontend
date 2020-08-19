@@ -26,7 +26,8 @@ const HomeContainer = ({history,match}) =>{
             <Loading />
             :
             <Home 
-                images={data.images} 
+                images={data.first} 
+                second={data.second} 
                 history={history}
             />
         } 
@@ -36,7 +37,8 @@ const HomeContainer = ({history,match}) =>{
 
 const mapStateToProps = (rootReducer)=>({//reducers => case
     isFatching:rootReducer.adaptive.isFatching,
-    images:rootReducer.adaptive.images,
+    first:rootReducer.adaptive.first,
+    second:rootReducer.adaptive.second,
 });
 
 export default HomeContainer;

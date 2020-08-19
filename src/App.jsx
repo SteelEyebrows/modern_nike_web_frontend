@@ -35,7 +35,7 @@ function App() {
           name:'des',
           content:'content'
         }]}
-        title="shop"/>
+        title="NIKE MODERN WEB"/>
         <Switch>
           {
             routes.map(({path,page,exact},i)=>(

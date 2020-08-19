@@ -4,7 +4,7 @@ import {ProductContainer,NavigationContainer} from '../containers';
         
 const Product = ({history}) =>(
     <MainTemplate header={<NavigationContainer/>}>
-        <ProductContainer history={history}/>
+        <ProductContainer history={history}  />
     </MainTemplate>
 );
 

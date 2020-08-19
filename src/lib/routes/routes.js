@@ -16,7 +16,7 @@ export const routes =[
         exact:true
     },
     {
-        path: "/products/:direction(\\d+|men|women)?/:id?",
+        path: "/products/:direction(\\d+|man|woman)?/:id?",
         page: Products,
         exact: true
     },

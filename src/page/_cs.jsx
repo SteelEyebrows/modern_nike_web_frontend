@@ -1,7 +1,6 @@
 import * as React from 'react';
-// import {MainTemplate,Footer} from 'components';
 import {MainTemplate} from '../components';
-import {CsContainer,NavigationContainer} from '../containers';
+import {CsContainer} from '../containers';
         
 const Cs = () =>(
     <MainTemplate>

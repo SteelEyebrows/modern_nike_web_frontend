@@ -30,6 +30,7 @@ export const CartContainer =styled.div`
         height:50px;
         border:1px solid black;
         margin-top:1em;
+        text-align:center;
     }
 
     .buttonBox{

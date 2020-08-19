@@ -24,8 +24,11 @@ export function* fetchAddCart({ payload }) {
 
 export function* fetchDeleteCart({ payload }) {
   try {
-    yield storage.set("CART", payload);
-    yield put(cartAction.deleteCartSuccess(payload));
+    const byfar = yield storage.get("CART");
+    byfar.splice(payload, 1);
+    console.log(byfar);
+    yield storage.set('CART',byfar);
+
   }
     catch(error) {
   

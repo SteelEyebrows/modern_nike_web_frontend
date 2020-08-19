@@ -10,9 +10,9 @@ import { call, put, takeEvery } from "redux-saga/effects";
 
 export function* fetchProducts({payload}) {
   try {
-    const { data } = payload==='men'?
-    yield call(Products.getMenProducts, "index.json")
-    :yield call(Products.getWomenProducts, "index.json");
+    const { data } = payload==='man'?
+    yield call(Products.getManProducts, "index.json")
+    :yield call(Products.getWomanProducts, "index.json");
     
     yield put(productsAction.productsSuccess(data));
 }

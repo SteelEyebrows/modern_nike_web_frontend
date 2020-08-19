@@ -3,7 +3,7 @@ import { MainTemplate} from "../components";
 import { DetailContainer,NavigationContainer } from "../containers";
 
 const Detail = () => (
-  <MainTemplate header={<NavigationContainer />}>
+  <MainTemplate header={<NavigationContainer />} >
     <DetailContainer />
   </MainTemplate>
 );

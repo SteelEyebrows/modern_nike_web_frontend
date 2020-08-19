@@ -55,3 +55,27 @@ export const Image =styled.img`
     margin-left: -50%;
     z-index:10;
 `;
+export const MobileHome =styled.div`
+    margin-bottom:3em;
+    text-align: center;
+    h2{
+        font-size:2em;
+    }
+    p{
+        margin:auto;
+        width:50%;
+    }
+    img{
+        width:100vw;
+        height:auto;
+    }
+    button{
+        background:black;
+        color:#fff;
+        border:none;
+        border-radius:10px;
+        width:60%;
+        height:40px;
+        margin:2em;
+    }
+`;

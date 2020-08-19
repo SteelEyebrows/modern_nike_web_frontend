@@ -11,6 +11,7 @@ export default function Slime({
   left,
   bottom,
   size,
+  fontsize,
   typenumber,
   title,
   desc,
@@ -40,13 +41,13 @@ export default function Slime({
       typenumber={Whattype(typenumber)}
     >
           <Img before={before} after={after}>
-             <Inner size={size}>
+             <Inner fontsize={fontsize} size={size}>
                 {
                   ishover?
                   <div className="hovered">
                     
                     <p className="hovered__desc">{desc}</p>
-                    <button onClick={onClick}>바로가기</button>
+                    <button onClick={onClick}>바로가기☛</button>
                   </div>
                   :
                   <div className="unhovered">

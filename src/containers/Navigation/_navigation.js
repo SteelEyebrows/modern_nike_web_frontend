@@ -9,9 +9,14 @@ import storage from '../../lib/storage';
 const NavigationContainer = ({history,match}) =>{
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
 	const [isLoginModalVisible, setIsLoginModalVisible] = useState(false);
+	const [isMobileMenuModalVisible, setIsMobileMenuModalVisible] = useState(false);
+	
+	const reverseMobileMenuModal = () => setIsMobileMenuModalVisible(!isMobileMenuModalVisible);
+    const escMobileMenuModal = () => setIsMobileMenuModalVisible(false);
+	
 	const reverseLoginModal = () => setIsLoginModalVisible(!isLoginModalVisible);
     const escLoginModal = () => setIsLoginModalVisible(false);
-	
+
     //get data
     const data = useSelector(mapStateToProps, []);
     const dispatch = useDispatch();
@@ -94,8 +99,12 @@ const NavigationContainer = ({history,match}) =>{
 				isAuthenticated={isAuthenticated}
 
 				reverseLoginModal={reverseLoginModal}
-                escLoginModal={escLoginModal}
-                isLoginModalVisible={isLoginModalVisible}
+				escLoginModal={escLoginModal}
+				isLoginModalVisible={isLoginModalVisible}
+
+				reverseMobileMenuModal={reverseMobileMenuModal}
+				escMobileMenuModal={escMobileMenuModal}
+				isMobileMenuModalVisible={isMobileMenuModalVisible}
             />
     
         </>

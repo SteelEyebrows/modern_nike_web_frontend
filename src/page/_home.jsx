@@ -3,8 +3,8 @@ import {MainTemplate} from '../components';
 import {HomeContainer,NavigationContainer} from '../containers';
         
 const Home = () =>(
-    <MainTemplate header={<NavigationContainer/>}>
-        <HomeContainer/>
+    <MainTemplate header={<NavigationContainer />}>
+        <HomeContainer />
     </MainTemplate>
 );
 

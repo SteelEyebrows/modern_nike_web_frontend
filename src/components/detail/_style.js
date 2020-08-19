@@ -24,7 +24,6 @@ export const DetailContainer =styled.div`
             justify-content: center;
 	        align-items: center;
             height:150px;
-            background-color:pink;
             &__left{
                 font-family: 'GmarketSansBold';
                 width:70%;
@@ -44,7 +43,6 @@ export const DetailContainer =styled.div`
         .colorSelector{
             display:flex;
             height:auto;
-            background-color:yellow;
             &__color{
                 img{
                     width:100px;
@@ -59,27 +57,40 @@ export const DetailContainer =styled.div`
         .sizeSelector{
             display: grid;
             grid-template-columns: repeat(5, 1fr);
+            gap:1em;
+            text-align:center;
             &__inStock{
-                width:50px;
-                border: 1px solid #000;
-                margin: 0 auto;
+                border: 2px solid #000;
+                cursor:pointer;
                 &__clicked{
                     background-color:black;
                     color:white;
                 }
             }
             &__soldOut{
-                width:50px;
+                color:#ddd;
                 border: 1px solid #ddd;
-                margin: 2px auto;
+                cursor:pointer;
             }
         }
 
         .quantity{
             height:100px;
-            background-color:pink;
+            font-size:1rem;
+            padding:3em;
             &__controller{
                 display:flex;
+                margin:1em;
+                p{
+                    width:20px;
+                }
+                button{
+                    width:20px;
+                    height:20px;
+                    border:none;
+                    background:#ddd;
+                    cursor:pointer;
+                }
             }
         }
         .buyNow{

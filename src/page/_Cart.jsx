@@ -3,7 +3,7 @@ import {MainTemplate} from '../components';
 import {CartContainer,NavigationContainer} from '../containers';
         
 const Cart = () =>(
-    <MainTemplate header={<NavigationContainer />}> 
+    <MainTemplate header={<NavigationContainer />} > 
         <CartContainer />
     </MainTemplate>
 );

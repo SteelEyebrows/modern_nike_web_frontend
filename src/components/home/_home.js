@@ -1,30 +1,47 @@
 import * as React from "react";
 import Slime from './Slime/_slime';
-import {SectionSet,SectionOne,SectionTwo,NextButton,SlideInner,Image,Inner} from './_style';
+import {SectionSet,SectionOne,SectionTwo,NextButton,MobileHome,SlideInner,Image,Inner} from './_style';
 import { withRouter } from "react-router-dom";
 import Rotate from './Rotate';
 import Slider from './Slider';
 import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
-
+import { useMediaQuery } from 'react-responsive'
 
 const Home = ({ 
   images,
   history 
 }) => {
-
-	const nextSlide=()=>{
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const nextSlide=()=>{
 		var tl = new TimelineMax()
-			.to({}, 2, {})	
 			.to( ".set" , 0.5, {
-					marginLeft:'-100%',
+          marginLeft:'-100%',
+          delay:0.5,
 					ease: Sine.easeIn,
 					stagger: 0.2,
 				})
 	}
   return (
-    <>
-    <SectionSet className="set">			 
-          <SectionOne>
+    <>			 
+      {
+        isTabletOrMobile?
+          <MobileHome>
+              {
+                images.map((item)=>{
+                  return(
+                  <div className="item" key={item.title}>
+                    <img src={item.img} />
+                    <h2>{item.title}</h2>
+                    <p>{item.desc}</p>
+                    <button onClick={()=>{history.push(item.link)}}>바로가기</button>
+                  </div>
+                  )
+                })
+              }
+          </MobileHome>
+          :
+          <SectionSet className="set">
+            <SectionOne>
             <div>
               <Rotate/>
               <Slime 
@@ -95,12 +112,13 @@ const Home = ({
               </NextButton>
           </SectionOne>
 
-					<SectionTwo>
+          <SectionTwo>
             {/* <Slider datalist={images.second} height="300px" auto speed={3000}>
               
             </Slider> */}
-					</SectionTwo>
-			</SectionSet>
+          </SectionTwo>
+      </SectionSet>
+      }
 		</>
     );
   };

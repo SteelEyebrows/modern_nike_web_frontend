@@ -7,7 +7,7 @@ export const RegisterContainer =styled.div`
     padding:100px;
     align-items: center;    
     
-        button{
+        .registerButton{
             background-color: #000; 
             border: none;
             color: white;

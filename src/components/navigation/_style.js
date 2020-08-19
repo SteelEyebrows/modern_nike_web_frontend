@@ -1,7 +1,26 @@
 import styled, { keyframes } from 'styled-components';
 
-export const Navbar =styled.div`
-
+export const MobileNavbar =styled.div`
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    .logo{
+        width:70px;
+        margin:1em;
+        img{
+            width:70px;
+            height:auto;
+        }
+    }
+    button{
+        background:#fff;
+        border:none;
+        width:50px;
+        height:auto;
+        img{
+            width:50px;
+        }
+    }
 `;
 
 export const UpperMenu = styled.div`
@@ -74,7 +93,7 @@ export const MenuComp =styled.li`
         a{  
             width: 100px;
             font-family: 'GmarketSansBold';
-            color:${props=>props.className=="active"?"red":"black"};
+            color:${props=>props.className==="active"?'rgba(0,0,0,0.5)':"black"};
             text-decoration: none;
         }
 `;
@@ -105,7 +124,7 @@ export const SubMenu =styled.div`
                 font-family: 'GmarketSansLight';
                 color:black;
                 &:hover{
-                    color: springgreen;
+                    color: rgba(0,0,0,0.5);
                 }
             }
         }

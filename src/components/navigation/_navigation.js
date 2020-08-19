@@ -1,8 +1,8 @@
 import React, { StatelessComponent,useState } from 'react';
-import {Navbar,MenuContainer,UpperMenu,Menu,MenuComp,SubMenu} from './_style';
+import {MobileNavbar,MenuContainer,UpperMenu,Menu,MenuComp,SubMenu} from './_style';
 import {LoginFormContainer} from '../../containers'
 import {Modal} from '../Common'
-
+import { useMediaQuery } from 'react-responsive';
 // https://codepen.io/jonathan/pen/QOrjJj
 // https://webdesign.tutsplus.com/tutorials/how-to-build-a-mega-menu-with-flexbox--cms-33540
 
@@ -19,11 +19,44 @@ const Navigaition = ({
 	isAuthenticated,
 	reverseLoginModal,
     escLoginModal,
-    isLoginModalVisible,
+	isLoginModalVisible,
+	
+	reverseMobileMenuModal,
+	escMobileMenuModal,
+	isMobileMenuModalVisible
 }) => {
-
+	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 	return (
-		<Navbar>
+		<>
+		{
+			isTabletOrMobile?
+			<MobileNavbar>
+					<div className="logo" >
+						<img 
+							src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} 
+							alt="logo" 
+						/>
+					</div>
+					<button onClick={reverseMobileMenuModal}>
+						<img src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/15211315791553239378-512.png" />
+					</button>
+						<Modal 
+							content={
+							<div>
+								<ul>
+									<li onClick={()=>history.push('/')}><h2>COMPANY</h2></li>
+									<li onClick={()=>history.push('/products/man')}><h2>MAN</h2></li>
+									<li onClick={()=>history.push('/products/woman')}><h2>WOMAN</h2></li>
+								</ul>
+							</div>
+							} 
+							show={isMobileMenuModalVisible} 
+							reverse={reverseMobileMenuModal}
+							esc={escMobileMenuModal}
+						/>   
+    		</MobileNavbar>
+			:
+			<>
 			<UpperMenu>
 				<div 
 					onClick={()=>history.push(`/cs`)} 
@@ -67,6 +100,7 @@ const Navigaition = ({
 				src={"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1280px-Logo_NIKE.svg.png"} 
 				alt="logo" 
 				className="logo" 
+				onClick={()=>history.push(`/`)}
 			/>
 				<div 
 					onMouseEnter={onMouseEnterHandler} 
@@ -82,18 +116,18 @@ const Navigaition = ({
 							<a href="/cs" >Company</a>
 						</MenuComp>
 						<MenuComp 
-							onClick={()=>history.push(`/products/men`)} 
+							onClick={()=>history.push(`/products/man`)} 
 							onMouseEnter={hoverMenu2_enter} 
 							className={state.isActive2 ? "active" : ""}
 						>
-							<a href="#" >MEN</a>
+							<a href="#" >MAN</a>
 						</MenuComp>
 						<MenuComp 
-							onClick={()=>history.push(`/products/women`)}  
+							onClick={()=>history.push(`/products/woman`)}  
 							onMouseEnter={hoverMenu3_enter} 
 							className={state.isActive3 ? "active" : ""}
 						>
-							<a href="#" >WOMEN</a>
+							<a href="#" >WOMAN</a>
 						</MenuComp>
 						</ul>
 					</Menu>
@@ -123,7 +157,9 @@ const Navigaition = ({
 					</SubMenu>
 				</div>
 			</MenuContainer>
-		</Navbar>
+			</>
+		}
+		</>
 		);
 };
 
