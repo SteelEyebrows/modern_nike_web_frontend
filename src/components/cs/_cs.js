@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React from "react";
 import {UpperBody,LowerBody} from './_style';
 import {Modal} from '../Common';
 import Writing from './Writing';

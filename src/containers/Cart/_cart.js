@@ -3,7 +3,6 @@ import {useSelector,useDispatch} from 'react-redux';
 import { cartAction } from "../../store/actions";
 import {Cart} from '../../components';
 import { withRouter } from "react-router-dom";
-import {Loading} from '../../components/Common';
 import storage from '../../lib/storage';
 
 

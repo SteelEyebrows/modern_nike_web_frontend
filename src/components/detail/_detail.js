@@ -1,6 +1,4 @@
 import * as React from "react";
-import useIntersection from 'react-use/lib/useIntersection';
-import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
 import { withRouter } from "react-router-dom";
 import {DetailContainer} from'./_style';
 import {Button} from '../Common';

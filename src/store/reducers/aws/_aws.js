@@ -5,7 +5,7 @@ import {
     SUCCESS,
     FAILURE
   } from "../../constants";
-  import _ from "underscore";
+
 
   const initialState= {
     isFatching:false,

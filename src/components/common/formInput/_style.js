@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledFormInput =styled.div`
   font-size:0.2em;

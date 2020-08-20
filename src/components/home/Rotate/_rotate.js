@@ -1,7 +1,5 @@
 import * as React from "react";
 import {RotateContainer} from './_style';
-import gsap, { Sine,Linear,Power4 } from 'gsap';
-
 
 // https://codepen.io/Shaikat/pen/PapGpr
 const Rotate = ({

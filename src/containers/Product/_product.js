@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React,{useEffect,useState,useRef} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { productsAction,detailAction } from "../../store/actions";
 import { withRouter } from "react-router-dom";
 import {Products} from '../../components';
 import useIntersection from 'react-use/lib/useIntersection';
-import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import gsap, { Sine } from 'gsap';
 import {Loading} from '../../components/Common';
 
 const ProductContainer = ({history,match}) =>{
@@ -17,17 +17,17 @@ const ProductContainer = ({history,match}) =>{
     const getProducts =(sex)=>dispatch(productsAction.productsRequest(sex));
     const resetDetail =()=>dispatch(detailAction.detailSuccess({}));
 
-    React.useEffect(() => {
+    useEffect(() => {
         getProducts(match.params.direction);
         resetDetail();
     },[]);
 
 //**********animation****************
 
-    const [ tween, setTween ] = React.useState();
-	const [currentPage,setCurrentPage] = React.useState(1);
-	const [postPerPage,setPostPerPage] = React.useState(6);
-  	const trigger = React.useRef(null);
+    const [ tween, setTween ] = useState();
+	const [currentPage,setCurrentPage] = useState(1);
+	const [postPerPage,setPostPerPage] = useState(6);
+  	const trigger = useRef(null);
   
 	const intersection = useIntersection(trigger, { //스크롤 반응
 		root: null,
@@ -39,7 +39,7 @@ const ProductContainer = ({history,match}) =>{
 	const currentPost = data.list.slice(indexOfFirstPost,indexOfLastPost);
 	const paginate = pageNumber => setCurrentPage(pageNumber);
     
-    React.useEffect(
+    useEffect(
 		() => {
 		if(tween)tween.restart();
 		if (intersection && intersection.isIntersecting) {

@@ -4,7 +4,7 @@ import { detailAction,cartAction } from "../../store/actions";
 import {Detail} from '../../components';
 import { withRouter } from "react-router-dom";
 import {Loading} from '../../components/Common';
-import storage from '../../lib/storage';
+
 
 const DetailContainer = ({history,match}) =>{
     const [ quantity, setQuantity ] = useState(1);

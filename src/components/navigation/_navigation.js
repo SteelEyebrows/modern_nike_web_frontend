@@ -1,4 +1,4 @@
-import React, { StatelessComponent,useState } from 'react';
+import React from 'react';
 import {MobileNavbar,MenuContainer,UpperMenu,Menu,MenuComp,SubMenu} from './_style';
 import {LoginFormContainer} from '../../containers'
 import {Modal} from '../Common'
@@ -38,7 +38,7 @@ const Navigaition = ({
 						/>
 					</div>
 					<button onClick={reverseMobileMenuModal}>
-						<img src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/15211315791553239378-512.png" />
+						<img src="https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/15211315791553239378-512.png" alt="close" />
 					</button>
 						<Modal 
 							content={
@@ -113,46 +113,46 @@ const Navigaition = ({
 							onMouseEnter={hoverMenu1_enter} 
 							className={state.isActive1 ? "active" : ""} 
 						>
-							<a href="/cs" >Company</a>
+							<p>Company</p>
 						</MenuComp>
 						<MenuComp 
 							onClick={()=>history.push(`/products/man`)} 
 							onMouseEnter={hoverMenu2_enter} 
 							className={state.isActive2 ? "active" : ""}
 						>
-							<a href="#" >MAN</a>
+							<p>MAN</p>
 						</MenuComp>
 						<MenuComp 
 							onClick={()=>history.push(`/products/woman`)}  
 							onMouseEnter={hoverMenu3_enter} 
 							className={state.isActive3 ? "active" : ""}
 						>
-							<a href="#" >WOMAN</a>
+							<p>WOMAN</p>
 						</MenuComp>
 						</ul>
 					</Menu>
 
 					<SubMenu className="submenu">
 						<ul onMouseEnter={hoverMenu1_enter} className="menu-list">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Holidays</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><p>Home</p></li>
+							<li><p>Holidays</p></li>
+							<li><p>About</p></li>
+							<li><p>Blog</p></li>
+							<li><p>Contact</p></li>
 						</ul>
 						<ul onMouseEnter={hoverMenu2_enter} className="menu-list">
-							<li><a href="#">Shoes</a></li>
-							<li><a href="#">Clothing</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">Equipment</a></li>
-							<li><a href="#">Jordan</a></li>
+							<li><p>Shoes</p></li>
+							<li><p>Clothing</p></li>
+							<li><p>Accessories</p></li>
+							<li><p>Equipment</p></li>
+							<li><p>Jordan</p></li>
 						</ul>
 						<ul onMouseEnter={hoverMenu3_enter} className="menu-list">
-							<li><a href="#">Shoes</a></li>
-							<li><a href="#">Clothing</a></li>
-							<li><a href="#">Accessories</a></li>
-							<li><a href="#">Equipment</a></li>
-							<li><a href="#">Jordan</a></li>
+							<li><p>Shoes</p></li>
+							<li><p>Clothing</p></li>
+							<li><p>Accessories</p></li>
+							<li><p>Equipment</p></li>
+							<li><p>Jordan</p></li>
 						</ul>
 					</SubMenu>
 				</div>

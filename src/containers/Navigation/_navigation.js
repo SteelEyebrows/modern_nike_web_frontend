@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import { authAction } from "../../store/actions";
 import { withRouter } from "react-router-dom";
 import {Navigation} from '../../components';
-import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import gsap, { Sine } from 'gsap';
 import storage from '../../lib/storage';
 
 const NavigationContainer = ({history,match}) =>{
@@ -30,7 +30,7 @@ const NavigationContainer = ({history,match}) =>{
 		isActive3: false,
 	  });
     const onMouseEnterHandler = () => {
-		let tl = new TimelineMax({paused:true});
+		let tl = gsap.timeline({paused:true});
 		tl.to(".submenu", 0.1, { //메뉴 내리기
 			height:'300px',
 			opacity:1,
@@ -39,7 +39,7 @@ const NavigationContainer = ({history,match}) =>{
 	  };
 
 	const onMouseLeaveHandler = () => {
-		let tl2 = new TimelineMax({paused:true});
+		let tl2 = gsap.timeline({paused:true});
 		tl2.to(".submenu", 0.1, {
 			height:'0px',
 			opacity:0,

@@ -75,6 +75,9 @@ function Whattype(typenumber){
     case 4:{
       return type4;
     }
+    default: {
+      return type1;
+    }
   }
 
 }  

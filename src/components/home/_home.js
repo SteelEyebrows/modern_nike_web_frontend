@@ -1,19 +1,20 @@
 import * as React from "react";
 import Slime from './Slime/_slime';
-import {SectionSet,SectionOne,SectionTwo,NextButton,MobileHome,SlideInner,Image,Inner} from './_style';
+import {SectionSet,SectionOne,SectionTwo,NextButton,MobileHome} from './_style';
 import { withRouter } from "react-router-dom";
 import Rotate from './Rotate';
 import Slider from './Slider';
-import gsap, { Sine,TimelineMax,Linear,Power4 } from 'gsap';
+import gsap, { Sine } from 'gsap';
 import { useMediaQuery } from 'react-responsive'
 
 const Home = ({ 
   images,
+  second,
   history 
 }) => {
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
   const nextSlide=()=>{
-		var tl = new TimelineMax()
+		var tl = gsap.timeline()
 			.to( ".set" , 0.5, {
           marginLeft:'-100%',
           delay:0.5,
@@ -30,7 +31,7 @@ const Home = ({
                 images.map((item)=>{
                   return(
                   <div className="item" key={item.title}>
-                    <img src={item.img} />
+                    <img src={item.img} alt={item.title}/>
                     <h2>{item.title}</h2>
                     <p>{item.desc}</p>
                     <button onClick={()=>{history.push(item.link)}}>바로가기</button>
@@ -113,9 +114,9 @@ const Home = ({
           </SectionOne>
 
           <SectionTwo>
-            {/* <Slider datalist={images.second} height="300px" auto speed={3000}>
+            <Slider datalist={second} height="300px" auto speed={3000}>
               
-            </Slider> */}
+            </Slider>
           </SectionTwo>
       </SectionSet>
       }

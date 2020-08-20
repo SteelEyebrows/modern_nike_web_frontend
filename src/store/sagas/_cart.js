@@ -4,8 +4,8 @@ import {
     DELETE_CART,
     REQUEST,
   } from "../constants";
-import { cartAction } from "../actions";
-import { call, put,all,fork, takeLatest } from "redux-saga/effects";
+
+import { all,fork, takeLatest } from "redux-saga/effects";
 import storage from '../../lib/storage';
 
 

@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const MobileNavbar =styled.div`
     display:flex;
@@ -29,7 +29,7 @@ export const UpperMenu = styled.div`
     align-items: center;
     z-index:1000;
     height:30px;
-    right:60px;
+    margin-right:30px;
     border-bottom:1px solid rgba(192,192,192,0.6);
     font-family: 'GmarketSansLight';
     font-size:0.9em;
@@ -90,7 +90,7 @@ export const MenuComp =styled.li`
         align-items: center;
         margin:10px;
         text-align: center;
-        a{  
+        p{  
             width: 100px;
             font-family: 'GmarketSansBold';
             color:${props=>props.className==="active"?'rgba(0,0,0,0.5)':"black"};
@@ -119,7 +119,7 @@ export const SubMenu =styled.div`
         li{
             width: 100px;
             margin:10px;
-            a{
+            p{
                 text-decoration: none;
                 font-family: 'GmarketSansLight';
                 color:black;
