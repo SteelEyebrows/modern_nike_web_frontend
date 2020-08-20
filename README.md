@@ -14,18 +14,18 @@ AWS S3와 APPSYNC 를 활용해서 만든 리액트 프로젝트입니다. 직�
 GS 칼텍스 사이트 디자인 + Nike 사이트 디자인
 
 ### 메인화면
-<img src="images/homegif.gif" width="400px">
+<img src="images/homegif.gif" width="800px">
 
 ### 상품화면
-<img src="images/productgif.gif" width="400px">
+<img src="images/productgif.gif" width="800px">
 
 |             회원가입              |           장바구니            |
 | :-------------------------: | :---------------------------: |
-| <img src="images/register.png" width="200px"> | <img src="images/cart.png" width="200px"> |
+| <img src="images/register.png" width="400px"> | <img src="images/cart.png" width="400px"> |
 
 |           고객센터            |                        |
 | :---------------------------: | :--------------------------: |
-| <img src="images/cs.png" width="200px"> |  |
+| <img src="images/cs.png" width="400px"> |  |
 
 
 <br>
