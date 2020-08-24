@@ -1,0 +1,38 @@
+{
+  "files": {
+    "static/js/0.e4055994.chunk.js": "/modern_nike_web_frontend/static/js/0.e4055994.chunk.js",
+    "static/js/0.e4055994.chunk.js.map": "/modern_nike_web_frontend/static/js/0.e4055994.chunk.js.map",
+    "static/js/1.4fc4c630.chunk.js": "/modern_nike_web_frontend/static/js/1.4fc4c630.chunk.js",
+    "static/js/1.4fc4c630.chunk.js.map": "/modern_nike_web_frontend/static/js/1.4fc4c630.chunk.js.map",
+    "main.js": "/modern_nike_web_frontend/static/js/main.f31314e3.chunk.js",
+    "main.js.map": "/modern_nike_web_frontend/static/js/main.f31314e3.chunk.js.map",
+    "runtime-main.js": "/modern_nike_web_frontend/static/js/runtime-main.69f2a68c.js",
+    "runtime-main.js.map": "/modern_nike_web_frontend/static/js/runtime-main.69f2a68c.js.map",
+    "static/js/4.b4bf0f90.chunk.js": "/modern_nike_web_frontend/static/js/4.b4bf0f90.chunk.js",
+    "static/js/4.b4bf0f90.chunk.js.map": "/modern_nike_web_frontend/static/js/4.b4bf0f90.chunk.js.map",
+    "static/js/5.e4beba9a.chunk.js": "/modern_nike_web_frontend/static/js/5.e4beba9a.chunk.js",
+    "static/js/5.e4beba9a.chunk.js.map": "/modern_nike_web_frontend/static/js/5.e4beba9a.chunk.js.map",
+    "static/js/6.bbac21d1.chunk.js": "/modern_nike_web_frontend/static/js/6.bbac21d1.chunk.js",
+    "static/js/6.bbac21d1.chunk.js.map": "/modern_nike_web_frontend/static/js/6.bbac21d1.chunk.js.map",
+    "static/js/7.b35a6f84.chunk.js": "/modern_nike_web_frontend/static/js/7.b35a6f84.chunk.js",
+    "static/js/7.b35a6f84.chunk.js.map": "/modern_nike_web_frontend/static/js/7.b35a6f84.chunk.js.map",
+    "static/js/8.609e186f.chunk.js": "/modern_nike_web_frontend/static/js/8.609e186f.chunk.js",
+    "static/js/8.609e186f.chunk.js.map": "/modern_nike_web_frontend/static/js/8.609e186f.chunk.js.map",
+    "static/js/9.add1bb85.chunk.js": "/modern_nike_web_frontend/static/js/9.add1bb85.chunk.js",
+    "static/js/9.add1bb85.chunk.js.map": "/modern_nike_web_frontend/static/js/9.add1bb85.chunk.js.map",
+    "static/js/10.8ff1fad8.chunk.js": "/modern_nike_web_frontend/static/js/10.8ff1fad8.chunk.js",
+    "static/js/10.8ff1fad8.chunk.js.map": "/modern_nike_web_frontend/static/js/10.8ff1fad8.chunk.js.map",
+    "static/js/11.83b77608.chunk.js": "/modern_nike_web_frontend/static/js/11.83b77608.chunk.js",
+    "static/js/11.83b77608.chunk.js.map": "/modern_nike_web_frontend/static/js/11.83b77608.chunk.js.map",
+    "index.html": "/modern_nike_web_frontend/index.html",
+    "precache-manifest.de02926ff20454d93299c68471e21a25.js": "/modern_nike_web_frontend/precache-manifest.de02926ff20454d93299c68471e21a25.js",
+    "service-worker.js": "/modern_nike_web_frontend/service-worker.js",
+    "static/js/0.e4055994.chunk.js.LICENSE.txt": "/modern_nike_web_frontend/static/js/0.e4055994.chunk.js.LICENSE.txt",
+    "static/js/4.b4bf0f90.chunk.js.LICENSE.txt": "/modern_nike_web_frontend/static/js/4.b4bf0f90.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.69f2a68c.js",
+    "static/js/4.b4bf0f90.chunk.js",
+    "static/js/main.f31314e3.chunk.js"
+  ]
+}
